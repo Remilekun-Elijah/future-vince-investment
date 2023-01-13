@@ -4,7 +4,6 @@ import AboutPage from "./pages/AboutPage";
 import SignUp from "./pages/SignUp";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
-import Navigationbar from "./components/Navigationbar";
 import Dashboard from "./pages/Dashboard";
 import DashboardTwo from "./pages/DashboardTwo";
 import SecuritySettings from "./components/dashboard/accountSecurity/SecuritySettings";

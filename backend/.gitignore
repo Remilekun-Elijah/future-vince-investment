@@ -6,3 +6,4 @@ tables.txt
 .DS_Store
 .vscode
 sample.js
+package-lock.json

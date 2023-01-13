@@ -32,5 +32,14 @@ exports.withdraw = async (req, res, next) => {
     logger.error(err);
     res.status(err.code).json(err);
   }
-  
+}
+
+exports.getBankBalance = async (req, res, next) => {
+  try {
+    const bank = await bankHandler.balance();
+    res.status(bank.code).json(bank);
+  } catch (err) {
+    logger.error(err);
+    res.status(err.code).json(err);
+  }
 }

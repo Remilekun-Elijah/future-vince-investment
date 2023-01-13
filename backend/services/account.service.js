@@ -217,7 +217,7 @@ class Account extends AccountModel {
           await this.findByIdAndUpdate(user._id, {
             lastLogin: dayjs(new Date()).format('YYYY-MM-DD HH:mm'),
           });
-
+console.log(H.getRoleName, user);
           return ApiResponse.gen(
             HTTP_OK,
             responseMessage.ACCOUNT_LOGGED_IN, {

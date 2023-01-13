@@ -9,7 +9,6 @@ import DeleteModal from "../modal/DeleteModal";
 
 function Users({ user, that}) {
  const {state} = that;
-	console.log(state.users);
 	const [modalShow, setModalShow] = useState(false);
 
 	async function handleClick(e) {

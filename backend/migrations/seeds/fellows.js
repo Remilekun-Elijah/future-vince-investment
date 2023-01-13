@@ -13,7 +13,7 @@ const account = [{
     password: "$2b$10$M.BWL5TSna8syND2Y/kyo./i3RINzwoDWRzSgbOyd/YreblCvpjNa", // 970b15f7ec
     defaultPassword: "9c81a8351832a80c6516d2214a6cdc0c:2ad597b97086d63936bc66e51d88a113", // 970b15f7ec
     passwordArchived: [],
-    role: "fellow",
+    role: 2,
     status: "inactive",
     applicationStatus: "accepted",
     isEnabled: true,
@@ -31,7 +31,7 @@ const account = [{
     isEnabled: true,
     lastLogin: dayjs(new Date()).format("YYYY-MM-DD HH:mm"),
     applicationStatus: "accepted",
-    role: "fellow",
+    role: 2,
     createdAt: "2022-04-04T22:46:24.486+00:00",
     updatedAt: "2022-04-04T22:54:02.859+00:00"
   },
@@ -41,7 +41,7 @@ const account = [{
     password: "$2b$10$j0zKBsbftqcuanwGPyzYDufzc1uV765dMEgl8qoYZ/.4NA61t1SYa", // 9210716db0
     defaultPassword: "e3318aa4ce288567cc926c51c568b296:e3f29cf71d754d5c4da9d2659141042f", // 9210716db0
     passwordArchived: [],
-    role: "fellow",
+    role: 2,
     status: "inactive",
     applicationStatus: "accepted",
     isEnabled: true,

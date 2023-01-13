@@ -20,7 +20,7 @@ const Navigationbar = ({ isSignedUp, setIsSignedUp }) => {
         <Container className="col ">
           <Navbar.Brand href="#home">
             <Link className="text-white text-decoration-none" to="./">
-             <img className="logo" src={logo}></img>
+             <img className="logo " src={logo}></img>
             </Link>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />

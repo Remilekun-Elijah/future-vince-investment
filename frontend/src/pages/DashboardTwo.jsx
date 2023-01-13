@@ -42,7 +42,7 @@ const DashboardTwo = () => {
 									Available balance
 								</p>
 								<h4 className="card-title text-start pt-4">
-									${user?.bank?.balance || 0} USD
+									${new Intl.NumberFormat().format(user?.bank?.balance) || 0} USD
 								</h4>
 							</div>
 						</div>
@@ -52,7 +52,7 @@ const DashboardTwo = () => {
 									Total Invested
 								</p>
 								<h4 className="card-title text-start pt-4">
-									${user?.bank?.invested || 0} USD
+									${new Intl.NumberFormat().format(user?.bank?.invested) || 0} USD
 								</h4>
 							</div>
 						</div>
@@ -62,7 +62,7 @@ const DashboardTwo = () => {
 									Total Profits
 								</p>
 								<h4 className="card-title text-start pt-4">
-									${user?.bank?.profits || 0} USD
+									${new Intl.NumberFormat().format(user?.bank?.profits) || 0} USD
 								</h4>
 							</div>
 						</div>

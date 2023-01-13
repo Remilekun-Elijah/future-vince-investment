@@ -1,6 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-const InvestmentPlans = () => {
+const InvestmentPlans = ({ setIsSignedUp }) => {
   //create an array of objects
   const investmentPlans = [
     {
@@ -69,7 +70,13 @@ const InvestmentPlans = () => {
                 <hr className="title-spn mx-4"></hr>
                 <p className="title-spn">{investmentPlan.amount}</p>
               </div>
-              <button className="btn btn-custom m-auto mb-4">Invest Now</button>
+              <Link
+                  className=" text-decoration-none"
+                  to="/SignUp"
+                  onClick={(e) => setIsSignedUp(false)}
+                >
+                 <button className="btn btn-custom m-auto mb-4">Invest Now</button>
+          </Link>
             </div>
           </div>
         ))}

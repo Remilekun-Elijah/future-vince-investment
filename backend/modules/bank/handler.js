@@ -42,3 +42,8 @@ exports.withdraw = async (body, pid) => {
   bank.data._doc.activity = notification?.activities;
   return bank;
 }
+
+exports.balance = async () => {
+  const bank = await BankService.getBalance();
+  return bank;
+}

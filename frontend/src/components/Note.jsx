@@ -1,8 +1,9 @@
 import React from "react";
 import { ImWarning } from "react-icons/im";
 import { FaUsers } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
-const Note = () => {
+const Note = ({ setIsSignedUp }) => {
   return (
     <div className=" invest-bg">
       <div className=" m-auto  card  note-custom">
@@ -33,7 +34,13 @@ const Note = () => {
             the financial benefits.
           </p>
         </div>
+        <Link
+                  className=" text-decoration-none"
+                  to="/SignUp"
+                  onClick={(e) => setIsSignedUp(false)}
+                >
         <button className="btn btn-custom mb-3">BECOME A MEMBER</button>
+        </Link>
       </div>
     </div>
   );

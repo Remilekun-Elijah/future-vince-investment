@@ -48,7 +48,7 @@ const Home = () => {
       <Scroller />
       <Hero />
       <AboutUs />
-      <InvestmentPlans />
+      <InvestmentPlans isSignedUp={isSignedUp} setIsSignedUp={setIsSignedUp} />
       <Note />
       <WhyChoseVice />
       <LiveTrade />
@@ -57,7 +57,7 @@ const Home = () => {
       <UserFeedBacks />
       <Team />
       <DepositAndWithdrawal />
-      <RepresentativePost />
+      <RepresentativePost isSignedUp={isSignedUp} setIsSignedUp={setIsSignedUp} />
       <News />
       <Subscribe />
       <Footer />

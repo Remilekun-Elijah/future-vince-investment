@@ -1,6 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-const RepresentativePost = () => {
+const RepresentativePost = ({ setIsSignedUp }) => {
   return (
     <div className="pt-5 pay-bg">
       <div className="tble_1 py-4 region-rep ">
@@ -11,7 +12,13 @@ const RepresentativePost = () => {
           Investment's Company Regional <br></br>adcastChannel Representative. A
           regional Representative Earns $2000 monthly salary.
         </p>
+        <Link
+                  className=" text-decoration-none"
+                  to="/SignUp"
+                  onClick={(e) => setIsSignedUp(false)}
+                >
         <button className="btn btn-custom m-auto my-4">Join Us</button>
+        </Link>
       </div>
       <div className="pb-5 ">
         <div className="py-5">

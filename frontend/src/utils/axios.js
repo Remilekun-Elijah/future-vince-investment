@@ -6,12 +6,12 @@ import config from './config';
 
 const API = axios.create({
  baseURL: config.backendUrl,
- timeout: 10000
+ timeout: 20000
 });
 
-API.defaults.headers.common['Authorization'] = `Bearer ${Storage.get('token')?.token}`;
+API.defaults.headers.common['Authorization'] = `${Storage.get('token')?.token}`;
 
-API.defaults.timeout = 10000;
+API.defaults.timeout = 20000;
 
 const handleSessionExpired = (error) => {
  console.log(error)

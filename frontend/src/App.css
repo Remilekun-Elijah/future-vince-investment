@@ -174,9 +174,15 @@
   justify-content: space-between;
 }
 
-.img-foot {
-  width: 85%;
+.img-footTwo {
+  width: 75%;
   height: 100%;
+}
+
+.img-foot {
+  width: 80%;
+  height: 100%;
+  padding-bottom: 50px;
 }
 
 /* .border-danger {

@@ -6,7 +6,7 @@ class BACKEND {
     this._API = API;
   }
 
-   send({type, to, payload}) {
+   send({type, to, payload, useAlert = true}) {
     Alert({
       type: "info",
       message: "Processing request...",
@@ -16,16 +16,20 @@ class BACKEND {
     return this._API[type](to, payload).then(function (response) {
 
       if ([200, 201].includes(response.status)) {
-        Alert({
-          type: 'success',
-          message: response.data.message
-        })
+        if(useAlert){
+          Alert({
+            type: 'success',
+            message: response.data.message
+          })
+        }
         return response.data
       } else {
-        Alert({
-          type: 'error',
-          message: response.data.message
-        })
+        if(useAlert){
+          Alert({
+            type: 'error',
+            message: response.data.message
+          })
+        }
         return false
       }
     }).catch(function (e) {
@@ -82,6 +86,13 @@ class BACKEND {
     return this.send({
       to: '/user/all/activities',
       type: "get",
+    })
+  }
+  getBalance() {
+    return this.send({
+      to: '/bank',
+      type: "get",
+      useAlert: false
     })
   }
 

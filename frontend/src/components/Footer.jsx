@@ -16,9 +16,9 @@ const Footer = () => {
       <SimpleMap className="simMap "/>
       </div>
       <div className="row bg m-auto mt-5 pt-5 ">
-        <div className="col-md-4 display-6 mb-5  logo">
+        <div className="col-md-4 display-6 mb-5 img-foot logo">
         <h5 className="text-start text-white text-uppercase ms-5 mb-4 mt-5"><FaGem /> Certificate</h5>
-          <Link to="/HomePage" className=" text-decoration-none"><img className="img-foot" src="./images/cert-invest.jpg" alt="#"></img></Link>
+          <img className="img-footTwo" src="./images/cert-invest.jpg" alt="#" />
         </div>
         <div className="col-md-2 text-white mb-4 mt-5">
           <h5 className="text-start text-uppercase">Our Company</h5>

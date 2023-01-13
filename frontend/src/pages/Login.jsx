@@ -8,6 +8,11 @@ import SignUp from "./SignUp";
 import BACKEND from "../utils/backend";
 import Storage from "../utils/storage";
 import History from "../utils/history";
+import { useNavigate } from "react-router";
+
+const Login = ({ isSignedUp, setIsSignedUp }) => {
+	const navigate = useNavigate()
+
 
 const API = new BACKEND();
 const model = {
@@ -23,14 +28,14 @@ const setState = (setFormData, value) => {
 
 const signin = async (payload) => {
 	const res = await API.login(payload);
+	console.log(res.data);
   if(res){
     Storage.set("token", res.data)
-				if(res.data.type.toLowerCase() === 'user') History.push("dashboardtwo")
-    else History.push("adminDash2")
+				if(res.data.type.toLowerCase() === 'user') window.location.href = "/dashboardtwo"
+    else window.location.href = "/adminDash2"
   }
 };
 
-const Login = ({ isSignedUp, setIsSignedUp }) => {
   const [formData, setFormData] = useState(model);
 
   function addData(e) {

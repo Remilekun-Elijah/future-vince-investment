@@ -24,8 +24,9 @@ class AdminDash2 extends React.Component {
 	}
 	async componentDidMount() {
 		await this.requestUsers();
-		await this.requestUser();
+		// await this.requestUser();
 		await this.getActivities();
+		await this.getBalance();
 	}
 	
 	requestUsers() {
@@ -61,21 +62,22 @@ class AdminDash2 extends React.Component {
 			console.error(e);
 		}
 	}
-	requestUser() {
-		new BACKEND()
-			.isAuthenticated()
-			.then((user) => {
-				if (user) {
-					Storage.set("user", user?.data);
-					this.setState({ ...this.state, user: user.data });
-				}
-			})
-			.catch((e) => {
-				const user = Storage.get("user");
-				this.setState({ ...this.state, user });
-				console.error("Using storages data", e);
-			});
-	}
+
+	// requestUser() {
+	// 	new BACKEND()
+	// 		.isAuthenticated()
+	// 		.then((user) => {
+	// 			if (user) {
+	// 				Storage.set("user", user?.data);
+	// 				this.setState({ ...this.state, user: user.data });
+	// 			}
+	// 		})
+	// 		.catch((e) => {
+	// 			const user = Storage.get("user");
+	// 			this.setState({ ...this.state, user });
+	// 			console.error("Using storages data", e);
+	// 		});
+	// }
 	
 
 	async getActivities() {
@@ -91,6 +93,15 @@ class AdminDash2 extends React.Component {
 		}
 		
 	}
+
+	async getBalance() {
+		try{
+			const bank = await new BACKEND().getBalance();
+			this.setState({...this.state, user: {...this.state.user, bank: {invested: bank.data}}})
+		}catch(e){
+		}
+	}
+	
 	
 	render() {
 		return (
@@ -109,7 +120,7 @@ class AdminDash2 extends React.Component {
 							<div className="card-body ">
 								<p className="card-text fw-bold text-start mt-2">Total Users</p>
 								<h4 className="card-title text-start pt-4">
-									{this.state?.users?.pageCount || 0}
+									{new Intl.NumberFormat().format(this.state?.users?.pageCount) || 0}
 								</h4>
 							</div>
 						</div>
@@ -119,7 +130,7 @@ class AdminDash2 extends React.Component {
 									Total Investments
 								</p>
 								<h4 className="card-title text-start pt-4">
-									$ {this.state?.user?.totalInvested || 0} USD
+									$ {new Intl.NumberFormat().format(this.state?.user?.bank?.invested) || 0} USD
 								</h4>
 							</div>
 						</div>
