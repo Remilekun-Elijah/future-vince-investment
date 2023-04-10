@@ -168,6 +168,7 @@ class Account extends AccountModel {
   }, referrer) {
     try {
       let user = await this.getAccountByEmail(email);
+      console.log(user);
       if (user) {
         if ([USER].includes(user.role) && referrer == ADMIN) {
           throw ApiResponse.gen(
@@ -235,9 +236,9 @@ console.log(H.getRoleName, user);
       }
       throw ApiResponse.gen(HTTP_NOT_FOUND, responseMessage.ACCOUNT_NOT_FOUND);
     } catch (err) {
-      logger.error(err);
+      logger.error(err.type);
       if (err.code) throw err;
-      throw ApiResponse.gen(
+      else throw ApiResponse.gen(
         HTTP_INTERNAL_SERVER_ERROR,
         responseMessage.INTERNAL_SERVER_ERROR
       );

@@ -19,7 +19,7 @@ const account = [{
 {
   _id: accountId[1],
   passwordArchived: [],
-  email: "Anthonyalasha44544@mail.com",
+  email: "anthonyalasha44544@mail.com",
   password: "$2b$10$mmu7N4ArkHE5py7T8weyqO.YiW/p7Sv/odgOm8arZ/.ypUWSiHFqm", // superAdmin@1
   role: 0,
   status: "active",
@@ -48,7 +48,7 @@ const profile = [{
   _id: profileId[1],
   user: accountId[1], 
   number: "+2348147722463",
-  email: "Anthonyalasha44544@mail.com",
+  email: "anthonyalasha44544@mail.com",
   firstName: "Anthony",
   lastName: "Alasha",
   userName: 'Anthony',
