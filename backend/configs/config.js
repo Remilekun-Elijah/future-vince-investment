@@ -36,7 +36,7 @@ environments.production = {
 
 environments.development = {
     'env': process.env.NODE_ENV,
-    'port': process.env.PORT,
+    'port': 9000,
     'version': process.env.VERSION,
     'host': process.env.LOCAL_HOST,
     'secret': process.env.SECRET,
@@ -45,13 +45,11 @@ environments.development = {
     "frontend_host": process.env.FRONTEND_LOCAL_HOST,
     "frontend_admin_host": process.env.FRONTEND_ADMIN_LOCAL_HOST,
     "frontend_dev_host": "http://dev.techchak.com",
-    
     "smtp_secret": process.env.GMAIL_SECRET,
     "smtp_from": process.env.GMAIL_USER,
     "smtp_user": process.env.GMAIL_USER,
     "smtp_host": process.env.GMAIL_HOST,
     "smtp_reply_to": process.env.GMAIL_REPLY_TO,
-
     'paystack_secret': process.env.PAYSTACK_SECRET,
     "mongodb_uri": process.env.LOCAL_MONGODB_URI,
     "mongodb_cert": process.env.MONGODB_CERT,

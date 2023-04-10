@@ -222,7 +222,8 @@ console.log(H.getRoleName, user);
             HTTP_OK,
             responseMessage.ACCOUNT_LOGGED_IN, {
               token,
-              type: H.getRoleName(user.role)
+              type: H.getRoleName(user.role),
+              user: profile
             }
           );
         }
