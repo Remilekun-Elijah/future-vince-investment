@@ -119,7 +119,7 @@ class BankService extends Bank {
 
  static async getBalance() {
   const bank = await this.find();
-   const data = bank.map(balance => balance.invested).reduce((a, b) => a + b)
+   const data = bank?.map(balance => balance?.invested)?.reduce((a, b) => a + b)
   return gen(HTTP_OK, 'Balance retrieved successfully', data)
  }
 
