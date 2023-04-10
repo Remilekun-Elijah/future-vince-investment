@@ -25,23 +25,19 @@ const Profile = () => {
 	}, []);
 
   return (
-    <div className="feedback-bg-dash-2  py-5">
+    <div className="feedback-bg-dash-2  pb-5 pt-[5%]">
       <DashNavbar />
       <Dashboard />
-      <div className="col-md-9 col-sm-7 col-9 dash-text mx-sm-0  me-sm-0 pe-2  ">
+      <div className="col-md-9 col-sm-7 col-9 dash-text mx-sm-0  me-sm-0 pe-2  pt-[5%]">
         <div className="card rein-crd-5 mt-1">
           <div className="card-body mb-3 ms-2">
             <h5 className="text-start text-light">Personal Information</h5>
-            <p className="card-text text-start text-light mb-5">
-              Basic info, like your name and address, that you use on Vince
-              Investment Investment
-            </p>
             <div className="row text-start">
               <div className="col-md-12 me-sm-0 me-4 ">
                 <h6 className=" my-3 basic">BASICS</h6>
                 <div className="d-flex flex-sm-row flex-column justify-content-between ">
                   <h6 className=" my-3">Username</h6>
-                  <p className=" my-3">{user?.name} {user?.userName}</p>
+                  <p className=" my-3">{user?.name}</p>
                   <IoIosArrowForward
                     className=" my-3 edit-profile"
                     onClick={() => setModalShow(true)}

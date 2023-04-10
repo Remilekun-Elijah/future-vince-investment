@@ -2,13 +2,14 @@ import React, { useState } from "react";
 import AdminDash from "../../admin/AdminDash";
 import DashNavbar from "../../DashNavbar";
 import ChangePasswordModal from "../../modal/ChangePasswordModal";
+import Dashboard from "../../../pages/Dashboard";
 
 const AdminSecuritySettings = () => {
   const [modalShow, setModalShow] = useState(false);
   return (
     <div className="row feedback-bg-dash min-h-screen">
       <DashNavbar />
-      <AdminDash />
+      <Dashboard />
       <div className="col-8 text-start">
         <p className="text-light  fw-bold draw-hd-0 ">Security Settings</p>
         <div className="card rein-crd-2">

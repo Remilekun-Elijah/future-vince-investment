@@ -1,55 +1,26 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { FaBars } from "react-icons/fa";
-import { AiOutlineClose } from "react-icons/ai";
-import { SidebarData } from "../data/SidebarData";
-import { IconContext } from "react-icons";
+import React from "react";
 
-function Dashboard() {
-  const [sidebar, setSidebar] = useState(false);
+import styled from "styled-components";
+import Sidebar from "./SideBar";
 
-  const showSidebar = () => setSidebar(!sidebar);
+const Container = styled.div`
+width: 100%;
+`,
+	MainPage = styled.div`
+  margin-left: 21.5%;
+  width: 80%;
+	`;
+export default function Home({children, bg}) {
 
-  const closeSidebar = () => setSidebar(false);
+// 	const logout = () => {
+// 		Storage.remove('token');
+// 		history.push("/");
+//  };
 
-  return (
-    <div className="">
-      <IconContext.Provider value={{ color: "#3E497F", size: "1.3em" }}>
-        <div className="navbar">
-          <Link to="#" className="menu-bars">
-            <FaBars onClick={showSidebar} />
-          </Link>
-        </div>
-        <nav
-          className={sidebar ? "nav-menu active" : "nav-menu closed-nav-menu"}
-        >
-          <ul
-            className="nav-menu-items d-grid justify-content-start"
-            onClick={showSidebar}
-          >
-            <li className="navbar-toggle">
-            </li>
-            {SidebarData.map((item, index) => {
-              return (
-                <li key={index} className={item.cName}>
-                  <Link to={item.path}>
-                    {item.icon}
-                    <span
-                      className={`ps-2 sidebar-text ${
-                        !sidebar && "closed-sidebar-text"
-                      }`}
-                    >
-                      {item.title}
-                    </span>
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
-        </nav>
-      </IconContext.Provider>
-    </div>
-  );
+	return (
+		<Container className="flex">
+   <Sidebar />
+   <MainPage className="pl-7" >{children}</MainPage>
+		</Container>
+	);
 }
-
-export default Dashboard;

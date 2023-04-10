@@ -50,7 +50,7 @@ const Invest = () => {
       <DashNavbar />
       <Dashboard />
       <div className=" col-sm-9 col-7 m-auto me-3 mt-1">
-        <h1 className=" fw-bold  text-light text-start mt-4">Invest</h1>
+        <h1 className=" fw-bold  text-light text-start ">Invest</h1>
         <p className="mt-2 mb-5 text-light text-start">
           Choose your investment plan
         </p>
@@ -64,13 +64,14 @@ const Invest = () => {
                 <p className="card-text">Maximum: {investmentPlan.max}</p>
                 <p className="card-text">{investmentPlan.days}</p>
                 <button
-                  className="btn dash-btn btn-inv text-start"
+                  className="btn dash-btn btn-inv text-start flex justify-between"
                   onClick={() => {
                     setModalData(investPlans[index]);
                     setModalShow(true);
                   }}
                 >
-                  Invest <AiOutlineArrowRight className="icon-btn" />
+                  <div className="flex justify-between"><span>Invest </span> 
+                  <AiOutlineArrowRight className="mt-1" /></div>
                 </button>
               </div>
             </div>

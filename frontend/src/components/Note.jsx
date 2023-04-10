@@ -10,7 +10,7 @@ const Note = ({ setIsSignedUp }) => {
         <div className="row ">
           <div className="mt-4 ">
             <h3 className="note-1">
-              <ImWarning className="display-5" /> Please Note
+              <ImWarning className="display-5 m-auto" /> Please Note
             </h3>
           </div>
         </div>
@@ -24,7 +24,7 @@ const Note = ({ setIsSignedUp }) => {
           <div className="row">
             <div className="mt-4">
               <h3 className="note-1">
-                <FaUsers className="display-5" /> REFERRAL COMMISION 10%
+                <FaUsers className="display-5 m-auto" /> REFERRAL COMMISION 10%
               </h3>
             </div>
           </div>

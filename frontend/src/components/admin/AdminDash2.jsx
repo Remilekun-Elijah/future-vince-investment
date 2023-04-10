@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import AdminDash from "./AdminDash";
 import BACKEND from "../../utils/backend";
 import Storage from "../../utils/storage";
+import Dashboard from "../../pages/Dashboard";
 import DashNavbar from "../DashNavbar";
 import dayjs from "dayjs";
 import {FcCheckmark} from 'react-icons/fc';
@@ -105,18 +106,18 @@ class AdminDash2 extends React.Component {
 	
 	render() {
 		return (
-			<div className="admin-dash row feedback-bg-dash-3 ">
+			<div className=" feedback-bg-dash-3 pb-[5%]">
 				<DashNavbar />
-				<AdminDash />
-				<div className="col-md-8 m-auto ps-5">
+				<Dashboard />
+				<div className=" w-[63%] m-auto ps-5  pt-[5%]">
 					<h1 className="text-light text-start ms-5 mt-5">
 						Good day, {this.state?.user?.userName}
 					</h1>
 					<p className="text-light text-start ms-5">
 						Welcome to your admin dashboard.
 					</p>
-					<div className="row d-flex justify-content-between m-auto">
-						<div className="card col-md-6 ms-5 mt-5 admin-card">
+					<div className="flex justify-between m-auto">
+						<div className="card ms-5 mt-5 w-[80%]">
 							<div className="card-body ">
 								<p className="card-text fw-bold text-start mt-2">Total Users</p>
 								<h4 className="card-title text-start pt-4">
@@ -124,7 +125,7 @@ class AdminDash2 extends React.Component {
 								</h4>
 							</div>
 						</div>
-						<div className="card col-md-6 ms-5 mt-5 admin-card admin-card-marg">
+						<div className="card ms-5 mt-5 w-[80%]">
 							<div className="card-body ">
 								<p className="card-text fw-bold text-start mt-2">
 									Total Investments
@@ -134,13 +135,14 @@ class AdminDash2 extends React.Component {
 								</h4>
 							</div>
 						</div>
-						<div className="card mb-5 ms-5 mt-5">
+					</div>
+					<div className="card mb-5 ms-5 mt-5">
 							<div className="card-body ">
 								<div className="d-flex justify-content-between">
 									<p className="card-text fw-bold text-start mt-2">
 										Users Recent Activities
 									</p>
-									<p className="mt-2 border-2 border-primary border-bottom">
+									<p className="mt-2 border-primary border-bottom">
 										All
 									</p>
 								</div>
@@ -172,7 +174,6 @@ class AdminDash2 extends React.Component {
 								}):<p className="card-text text-start">No activities</p>}
 							</div>
 						</div>
-					</div>
 				</div>
 			</div>
 		);

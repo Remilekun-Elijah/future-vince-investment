@@ -13,35 +13,60 @@ const DepositTable = () => {
           </tr>
         </thead>
         <tbody className="text-start t-body">
-          <tr>
-            <td colSpan={2}>stefano visentini</td>
-            <td>Bitcoin</td>
-            <td>$100</td>
-          </tr>
-          <tr>
-            <td colSpan={2}>bella zammit</td>
-            <td>Bitcoin</td>
-            <td>$300</td>
-          </tr>
-          <tr>
-            <td colSpan={2}>tom golden</td>
-            <td>Bitcoin</td>
-            <td>$400</td>
-          </tr>
-          <tr>
-            <td colSpan={2}>morten brosvik</td>
+        <tr>
+            <td colSpan={2}>James Lucas</td>
             <td>Bitcoin</td>
             <td>$550</td>
           </tr>
           <tr>
-            <td colSpan={2}>thaps</td>
+            <td colSpan={2}>Liam Oliver</td>
+            <td>Bitcoin</td>
+            <td>$400</td>
+          </tr>
+          <tr>
+            <td colSpan={2}>Stefano Visentini</td>
+            <td>Bitcoin</td>
+            <td>$100</td>
+          </tr>
+          <tr>
+            <td colSpan={2}>Bella Zammit</td>
+            <td>Bitcoin</td>
+            <td>$300</td>
+          </tr>
+          <tr>
+            <td colSpan={2}>Morten Brosvik</td>
+            <td>Bitcoin</td>
+            <td>$550</td>
+          </tr>
+          <tr>
+            <td colSpan={2}>Thaps</td>
             <td>Bitcoin</td>
             <td>$350</td>
           </tr>
           <tr>
-            <td colSpan={2}>mia shaune</td>
+            <td colSpan={2}>Mia shaune</td>
             <td>Bitcoin</td>
             <td>$600</td>
+          </tr>
+          <tr>
+            <td colSpan={2}>Brad Henry</td>
+            <td>Bitcoin</td>
+            <td>$100</td>
+          </tr>
+          <tr>
+            <td colSpan={2}>Amelia</td>
+            <td>Bitcoin</td>
+            <td>$300</td>
+          </tr>
+          <tr>
+            <td colSpan={2}>Charlotte Tom</td>
+            <td>Bitcoin</td>
+            <td>$400</td>
+          </tr>
+          <tr>
+            <td colSpan={2}>Sophia Scott</td>
+            <td>Bitcoin</td>
+            <td>$550</td>
           </tr>
         </tbody>
       </Table>

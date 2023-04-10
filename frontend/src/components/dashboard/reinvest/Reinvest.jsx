@@ -52,7 +52,11 @@ const Reinvest = () => {
     <div className=" feedback-bg-dash vh-100 pt-5">
       <DashNavbar />
       <Dashboard />
-      <form onSubmit={handleSubmit} className="col-md-8 dash-text my-5 reinvest  ">
+      <h1 className=" fw-bold  text-light text-start mt-[5%] ml-[23%]">Reinvest</h1>
+        <p className="mt-2 mb-5 text-light text-start ml-[23%]">
+          Enter amount to reinvest
+        </p>
+      <form onSubmit="{handleSubmit}" className=" dash-text my-5    ml-[5%] w-[60%]">
         <div className="card rein-crd  me-2 ">
           <div className="card-body">
             <hr className="mt-4"></hr>

@@ -103,7 +103,7 @@ const WhyChoseVice = () => {
               key={item.id}
             >
               <h4 className="">
-                <span className="">{item.icon}</span> {item.title}
+                <span className="align-center">{item.icon}</span> {item.title}
               </h4>
               <p className="text-light">{item.details}</p>
             </div>

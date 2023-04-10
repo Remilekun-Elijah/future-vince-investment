@@ -7,6 +7,7 @@ import dayjs from "dayjs";
 
 const DashboardTwo = () => {
 	const [user, setUser] = React.useState({});
+	console.log(user)
 
 	useEffect(() => {
 		new BACKEND()
@@ -27,15 +28,15 @@ const DashboardTwo = () => {
 			<DashNavbar />
 			<div className=" dash-text ">
 				<Dashboard />
-				<div className="col-md-8 hv-100">
+				<div className=" hv-100 pt-[5%]">
 					<h3 className="text-start text-light draw-hd-1 pt-5">
 						Good day, {user?.userName || "User"}
 					</h3>
-					<p className="text-start text-light draw-hd-2">
-						Welcome to Vince Investment
+					<p className="text-start text-light draw-hd-1">
+						Welcome to Elon trade
 					</p>
-					<div className="row">
-					<div className="col-md-6 rein-crd-3">
+					<div className="flex m-auto w-[70%]">
+					<div className=" w-[80%] ml-[20%]">
 						<div className="card mb-3">
 							<div className="card-body ">
 								<p className="card-text fw-bold text-start mt-2">
@@ -67,14 +68,14 @@ const DashboardTwo = () => {
 							</div>
 						</div>
 					</div>
-					<div className="col-md-6 rein-crd-4">
+					<div className="w-[90%] ml-[10%] ">
 						<div className="card mb-3">
 							<div className="card-body ">
 								<div className="d-flex justify-content-between">
 									<p className="card-text fw-bold text-start mt-2">
 										Recent Activities
 									</p>
-									<p className="mt-2 border-2 border-primary border-bottom">
+									<p className="mt-2  border-primary border-bottom">
 										All
 									</p>
 								</div>

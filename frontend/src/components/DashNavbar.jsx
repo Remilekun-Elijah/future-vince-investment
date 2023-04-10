@@ -7,7 +7,8 @@ import propTypes from 'prop-types'
 import Avatar from 'react-avatar';
 import Storage from "../utils/storage";
 import history from "../utils/history";
-import logo from "../images/vince-logo.png"
+import logo from "../images/tesla-3.svg";
+import logoTwo from "../images/btc-logo.png";
 
 const DashNavbar = () => {
   const logout = () => {
@@ -18,7 +19,12 @@ const DashNavbar = () => {
     <div>
       <Navbar collapseOnSelect expand="lg" className="dash-nav-bg" variant="light" fixed="top">
         <Container className="col ">
-          <Navbar.Brand href="#home"><Link className="text-white text-decoration-none" to="./"><img className="logo" src={logo}></img></Link></Navbar.Brand>
+          <Navbar.Brand href="#home">
+            <Link className="text-white text-decoration-none flex" to="">
+             <img className="logo " src={logo}></img>
+             <img className="logoTwo mt-2" src={logoTwo}></img>
+            </Link>
+            </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="ms-auto">

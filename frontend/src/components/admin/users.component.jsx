@@ -68,7 +68,10 @@ function Users({ user, that}) {
 				<a
 					href={"mailto:" + user.email}
 					className="text-decoration-none text-light ">
-					<BiEnvelope /> {user.email}
+					<div className="flex">
+					<BiEnvelope className="mt-1 mr-3"/> 
+					<span>{user.email}</span>
+					</div>
 				</a>
 			</td>
 			<td className="text-light pt-3">{dayjs(user?.user?.lastLogin || user?.user?.createdAt)?.format('DD/MM/YYYY HH:mm')}</td>
@@ -76,9 +79,10 @@ function Users({ user, that}) {
 				{getStatus(user?.user?.status)}
 			</td>
 			<td className="pt-3">
+				<div className="flex">
 				<a
 					href="#edit"
-					className="text-decoration-none text-light pt-3"
+					className="text-decoration-none text-light pt-2"
 					title="Edit"
 					data-id={user?._id}>
 					<FaEdit onClick={() => setModalShow(true)}/>
@@ -86,7 +90,7 @@ function Users({ user, that}) {
 				<a
 					href="#delete"
 					data-id={user?.user._id}
-					className="text-decoration-none text-light pt-3 ms-2"
+					className="text-decoration-none text-light pt-2 ms-2"
 					title="Delete">
 					<RiDeleteBin5Line />
 				</a>
@@ -94,7 +98,7 @@ function Users({ user, that}) {
      [0, 1].includes(user?.user?.status) ?
 				<a
 					href="#suspend"
-					className="text-decoration-none text-light ms-2"
+					className="text-decoration-none text-light pt-2 ms-2"
 					title="Suspend"
 					data-id={user?.user?._id}>
 					<FaUserAltSlash />
@@ -102,12 +106,13 @@ function Users({ user, that}) {
     :
 				<a
 					href="#suspend"
-					className="text-decoration-none text-light ms-2"
+					className="text-decoration-none text-light pt-2 ms-2"
 					title="Revoke suspension"
 					data-id={user?.user?._id}>
 					<FaUser />
 				</a>
 } 
+				</div>
 			</td>
 			<DeleteModal
         show={modalShow}

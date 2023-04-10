@@ -240,28 +240,28 @@ const SignUp = ({setIsSignedUp, isSignedUp}) => {
 					</p>
 				</Form>
 			</div>
-			<div className="row bg m-auto rights bgBlack text-white mt-5">
-				<div className="col-6 mt-4 mb-2">
-					<p className="">
-						<FaCopyright /> 2022 <span>Vince Investment.</span> All rights
-						reserved
-					</p>
-				</div>
-				<div className="col-4 mt-4 mb-2">
-					<a href="https://facebook.com">
-						<SiFacebook className="me-2 text-white" />
-					</a>
-					<a href="https://instagram.com">
-						<FaInstagramSquare className="me-2 text-white" />
-					</a>
-					<a href="https://twitter.com">
-						<SiTwitter className="me-2 text-white" />
-					</a>
-					<a href="https://linkedin.com">
-						<FaLinkedinIn className="text-white" />
-					</a>
-				</div>
-			</div>
+			<div className="flex justify-between bg m-auto rights bgBlack text-white mt-5 px-5 py-3">
+        <div className='flex'>
+        <FaCopyright className='mt-1 mr-2'/> 
+        <span >2022</span>
+        </div>
+      
+          <p className=""> Elon Trade. All rights reserved</p>
+        <div className="flex justify-between  ">
+          <a href="https://facebook.com"> 
+          <SiFacebook className="me-2 text-white" /> 
+          </a>
+          <a href="https://instagram.com">
+            <FaInstagramSquare className="me-2 text-white" />
+          </a>
+          <a href="https://twitter.com">
+            <SiTwitter className="me-2 text-white" />
+          </a>
+          <a href="https://linkedin.com">
+          <FaLinkedinIn className="text-white" />
+          </a>
+        </div>
+      </div>
 		</div> : <Login isSignedUp={isSignedUp} setIsSignedUp={setIsSignedUp}/>) 
 	);
 };

@@ -3,7 +3,7 @@ import React from 'react'
 const ReferralCommision = () => {
   return (
     <div className="my-5 invest-bg">
-      <div className="border m-auto w-50 my-5">
+      {/* <div className="border m-auto w-50 my-5">
       <div className="m-5">
         <div className="row">
         <div className="col-6 d-flex align-items-start">
@@ -17,7 +17,7 @@ const ReferralCommision = () => {
         </p>
       </div>
       <button className="btn btn-outline-secondary mb-3">BECOME A MEMBER</button>
-    </div>
+    </div> */}
     </div>
   )
 }

@@ -4,7 +4,8 @@ import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
 import { Link } from "react-router-dom";
 import propTypes from "prop-types";
-import logo from "../images/vince-logo.png"
+import logo from "../images/tesla-3.svg";
+import logoTwo from "../images/btc-logo.png";
 import Scroller from "../components/Scroller";
 
 const Navigationbar = ({ isSignedUp, setIsSignedUp }) => {
@@ -14,13 +15,14 @@ const Navigationbar = ({ isSignedUp, setIsSignedUp }) => {
         collapseOnSelect
         expand="lg"
         bg="black"
-        variant="dark"
+        variant="black"
         fixed="top"
       >
         <Container className="col ">
           <Navbar.Brand href="#home">
-            <Link className="text-white text-decoration-none" to="./">
+            <Link className="text-white text-decoration-none flex" to="./">
              <img className="logo " src={logo}></img>
+             <img className="logoTwo mt-2" src={logoTwo}></img>
             </Link>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />

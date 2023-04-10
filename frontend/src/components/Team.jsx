@@ -4,8 +4,8 @@ const Team = () => {
   const teams = [
     {
       id: 1,
-      name: "Alex Jonnes",
-      img: "./images/team4.jpeg",
+      name: "Elon Musk",
+      img: "./images/Elon_Musk.jpg",
       position: "CEO",
     },
     {

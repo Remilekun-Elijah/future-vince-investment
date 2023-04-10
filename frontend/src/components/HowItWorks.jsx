@@ -35,8 +35,8 @@ const HowItWorks = () => {
         {howItWorks.map((item) => (
           <div className="col-4 mx-2 border-0 wcv my-5" key={item.id}>
             <div className="hIworks  bg-dark">
-              <p className="hIworks-id bg-dark">{item.id}</p>
-              <img src={item.img} alt={item.title} />
+              <p className="hIworks-id bg-dark ">{item.id}</p>
+              <img className="ml-7" src={item.img} alt={item.title} />
             </div>
             <h3 className="my-4 ">{item.title}</h3>
           </div>

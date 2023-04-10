@@ -15,8 +15,8 @@ const SecuritySettings = () => {
       <div className="col-8 ms-sm-0 ms-2 text-start">
         <p className="text-light  fw-bold draw-hd-0 ">Security Settings</p>
         <div className="card rein-crd-2">
-          <div className="card-body row">
-            <div className="col-md-8">
+          <div className="card-body flex justify-between mr-5">
+            <div className="mt-3">
               <p className="card-text fw-bold text-start dash-text">
                 Change Password
               </p>
@@ -24,9 +24,9 @@ const SecuritySettings = () => {
                 Set a unique password to protect your account.
               </p>
             </div>
-            <div className=" text-start col-md-4 text-end">
+            <div className=" text-start mt-5 text-end">
               <button
-                className="btn dash-btn text-start mt-3"
+                className="btn dash-btn text-start "
                 onClick={() => setModalShow(true)}
               >
                 Change Password
