@@ -25,7 +25,7 @@ const HowItWorks = () => {
   return (
     <div className="team-bg ">
       <h1 className="mt-5 py-5 text-light display-4">
-        How Future Vince <span className="title-spn">investment Works</span>
+        How Elon <span className="title-spn">Trader Works</span>
       </h1>
       <p className="my-4 text-light">
         Get involved in our tremendous platform and Invest. We will utilize your

@@ -5,22 +5,19 @@ import Sidebar from "./SideBar";
 
 const Container = styled.div`
 width: 100%;
+height: 100%;
 `,
 	MainPage = styled.div`
   margin-left: 21.5%;
   width: 80%;
+  height: 100%;
 	`;
 export default function Home({children, bg}) {
 
-// 	const logout = () => {
-// 		Storage.remove('token');
-// 		history.push("/");
-//  };
-
 	return (
-		<Container className="flex">
+		<Container className="flex  ">
    <Sidebar />
-   <MainPage className="pl-7" >{children}</MainPage>
+   <MainPage className="pl-7 ">{children}</MainPage>
 		</Container>
 	);
 }

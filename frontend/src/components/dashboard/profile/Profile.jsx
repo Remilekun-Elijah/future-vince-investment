@@ -5,6 +5,7 @@ import { IoIosArrowForward } from "react-icons/io";
 import EditPhoneModal from "../../modal/EditPhoneModal";
 import DashNavbar from "../../DashNavbar";
 import BACKEND from "../../../utils/backend";
+import { ImWhatsapp } from "react-icons/im";
 
 const Profile = () => {
   const [modalShow, setModalShow] = useState(false);
@@ -25,12 +26,13 @@ const Profile = () => {
 	}, []);
 
   return (
-    <div className="feedback-bg-dash-2  pb-5 pt-[5%]">
+    <Dashboard >
       <DashNavbar />
-      <Dashboard />
-      <div className="col-md-9 col-sm-7 col-9 dash-text mx-sm-0  me-sm-0 pe-2  pt-[5%]">
-        <div className="card rein-crd-5 mt-1">
-          <div className="card-body mb-3 ms-2">
+    <div className="  pb-5 ">
+      
+      <div className=" dash-text  pe-2  pt-[5%]">
+        <div className="card border-0 mt-1">
+          <div className="card-body bg-gray-900 mb-3 ms-2 rounded-lg drop-shadow-lg">
             <h5 className="text-start text-light">Personal Information</h5>
             <div className="row text-start">
               <div className="col-md-12 me-sm-0 me-4 ">
@@ -81,6 +83,10 @@ const Profile = () => {
       <EditPhoneModal user={user} show={modalShow} onHide={() => setModalShow(false)} />
       {/* <EditPhoneModal show={modalShow} onHide={() => setModalShow(false)} /> */}
     </div>
+    <a href="https://wa.link/y22ett" className=" text-decoration-none">
+		<ImWhatsapp className="absolute right-[5%] bottom-[3%] w-[5%] h-[5%] text-gray-600"/>
+		</a>
+    </Dashboard>
   );
 };
 

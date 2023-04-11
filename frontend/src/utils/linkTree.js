@@ -12,7 +12,8 @@ import {
 } from "./helper";
 
 const {
-  SuperAdmin
+  SuperAdmin,
+  User
 } = Roles;
 
 const {
@@ -21,7 +22,7 @@ const {
 
 const links = [
   {
-    authorizedUsers: [2],
+    authorizedUsers: [User],
     name: "Dashboard",
     url: pageUrls.dashboard,
     icon: <MdIcons.MdOutlineDashboard  size = {
@@ -45,7 +46,7 @@ const links = [
     }
   },
   {
-    authorizedUsers: [2],
+    authorizedUsers: [User],
     name: 'Invest',
     url: pageUrls.invest,
     icon: < RiIcons.RiExchangeDollarLine size = {
@@ -63,7 +64,7 @@ const links = [
     className = "mx-3" / > ,
   },
   {
-    authorizedUsers: [2],
+    authorizedUsers: [User],
     name: 'Reinvest',
     url: pageUrls.reinvest,
     icon: <BsIcons.BsBoxArrowLeft size = {
@@ -73,7 +74,7 @@ const links = [
   },
 
   {
-    authorizedUsers: [2],
+    authorizedUsers: [User],
     name: "Withdraw",
     url: pageUrls.withdrawal,
     icon: <BsIcons.BsBoxArrowRight size = {
@@ -82,7 +83,7 @@ const links = [
     className = "mx-3" / > ,
   },
   {
-    authorizedUsers: [2],
+    authorizedUsers: [User],
     name: "Referrals",
     url: pageUrls.referrals,
     icon: <FiIcons.FiUserPlus size = {
@@ -91,7 +92,7 @@ const links = [
     className = "mx-3" / > ,
   },
   {
-    authorizedUsers: [2],
+    authorizedUsers: [User],
     name: "Profile",
     url: pageUrls.profile,
     icon: <FiIcons.FiUser size = {
@@ -100,7 +101,7 @@ const links = [
     className = "mx-3" / > ,
   },
   {
-    authorizedUsers: [2],
+    authorizedUsers: [User],
     name: "Account Security",
     url: pageUrls.security,
     icon: <BiIcons.BiLockAlt size = {

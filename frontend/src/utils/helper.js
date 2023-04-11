@@ -7,6 +7,6 @@ console.log(userInfo)
 
 export const Roles = {
     SuperAdmin: "SuperAdmin",
-    user: 2
+    User: "User"
    }
 

@@ -88,7 +88,7 @@ const WhyChoseVice = () => {
   return (
     <div className=" choice-bg">
       <h1 className=" text-light py-5 display-4">
-        Why Choose <span className="title-spn">Vice Investment?</span>
+        Why Choose <span className="title-spn">Elon Trader?</span>
       </h1>
       <p className="text-light">
         Our goal is to provide our investors with a reliable source of high

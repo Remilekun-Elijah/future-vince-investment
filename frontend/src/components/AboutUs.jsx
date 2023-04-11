@@ -11,7 +11,7 @@ const AboutUs = ({ isSignedUp, setIsSignedUp }) => {
             About <span className="title-spn">Us</span>
           </h1>
           <p>
-            Vinceinvestment.com is a promising company in the cryptocurrency
+            Elon Trader is a promising company in the cryptocurrency
             market. We are looking for integrated solutions for successful
             investments in equipment and organization the process of
             cryptomining. Since 2015, the company forms the core backbone of

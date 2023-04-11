@@ -3,12 +3,22 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { FaInstagramSquare, FaLinkedinIn, FaCopyright } from "react-icons/fa";
 import { SiFacebook, SiTwitter } from "react-icons/si";
+
+
 import propTypes from "prop-types";
 import SignUp from "./SignUp";
 import BACKEND from "../utils/backend";
 import Storage from "../utils/storage";
 import History from "../utils/history";
 import { useNavigate } from "react-router";
+import config from "../utils/config";
+import { Link } from "react-router-dom";
+import logo from "../images/tesla-3.svg";
+import logoTwo from "../images/btc-logo.png";
+
+const {
+	pageUrls
+  } = config;
 
 const Login = ({ isSignedUp, setIsSignedUp }) => {
 	const navigate = useNavigate()
@@ -57,10 +67,14 @@ const signin = async (payload) => {
 	return !isSignedUp ? (
 		<div className=" backgrnd-0 ">
 			<div className="">
-				<div className="signup-head signUp-border2">
-					<h3 className="display-5 fw-bold text-start my-5 ms-3 me-5 text-light ">
+				<div className="hero-bg  signUp-border2">
+				<Link className="text-white text-decoration-none flex" to="">
+             <img className="logo " src={logo}></img>
+             <img className="logoTwo mt-2" src={logoTwo}></img>
+            </Link>
+					<h3 className="display-5 fw-bold text-start my-4 ms-3 me-5 text-light ">
 						Welcome To <br></br>{" "}
-						<span className="title-spn">Vince Investment</span>
+						<span className="title-spn">Elon Trader</span>
 					</h3>
 				</div>
 				<Form
@@ -95,11 +109,11 @@ const signin = async (payload) => {
 					</Button>
 					<p className="text-end mt-4 text-light">
 						Haven't an account?{" "}
-						<a style={{textDecoration: "none"}}
+						<Link style={{textDecoration: "none"}}
 							className="title-spn cursor-pointer"
-							href="#/SignUp">
+							to={pageUrls.signup}>
 							Sign Up
-						</a>
+						</Link>
 					</p>
 				</Form>
 			</div>

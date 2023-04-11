@@ -30,13 +30,13 @@ class Users extends React.Component {
 	render() {
 
 		return (
-			<div className="row feedback-bg-dash-4 ">
+			<Dashboard >
 				<DashNavbar />
-				<Dashboard />
-				<div className="col-md-8 text-start m-auto row mt-5 ml-5 pt-[5%]">
-					<h1 className="ml-[10%] text-light">Users</h1>
-					<table className="table table-style col-md-12 ml-[13%] mt-5 text-light ">
-						<thead className="text-light">
+			<div className="row  ">
+				<div className="text-start m-auto row mt-5  w-[90%] m-auto">
+					<h1 className=" text-[var(--C_black_lite)]">Users</h1>
+					<table className="table table-style col-md-12  mt-5 text-[var(--C_black_lite)] ">
+						<thead className="text-[var(--C_black_lite)]">
 							<tr>
 								<th>Name</th>
 								<th>Email</th>
@@ -54,6 +54,7 @@ class Users extends React.Component {
 				</div>
 				
 			</div>
+			</Dashboard>
 		);
 	}
 }

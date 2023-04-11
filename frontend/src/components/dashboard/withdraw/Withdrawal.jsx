@@ -4,6 +4,9 @@ import Storage from "../../../utils/storage";
 import DashNavbar from "../../DashNavbar";
 import BACKEND from "../../../utils/backend";
 import Alert from "../../../utils/alert";
+import { ImWhatsapp } from "react-icons/im";
+
+
 const Reinvest = () => {
   const {bank: {walletId, balance }} = Storage.get("user");
   
@@ -30,16 +33,16 @@ const Reinvest = () => {
 
 
   return (
-    <div className="feedback-bg-dash h-100">
+    <Dashboard >
       <DashNavbar />
-      <Dashboard />
-      <div className=" text-strat w-[90%] ml-[24%] pt-[8%]">
-        <h1 className="text-light text-start  ">Withdraw</h1>
-        <p className="text-light text-start  ">
+    <div className="pb-5">
+      <div className=" text-strat w-[90%] pt-[5%]">
+        <h1 className="text-[var(--C_black_lite)]  text-start  ">Withdraw</h1>
+        <p className="text-[var(--C_black_lite)]  text-start  ">
           Withdraw funds from your Vince Investment account.
         </p>
-        <form onSubmit={handleSubmit} className="card w-[70%] ">
-          <div className="card-body text-start ">
+        <form onSubmit={handleSubmit} className="card w-[95%] m-auto my-5 border-0">
+          <div className="card-body bg-gray-100 text-start rounded-lg drop-shadow-md">
             <label className="card-text fw-bold  mt-3 mb-2 ">
               Withdrawal Amount
             </label>
@@ -68,6 +71,10 @@ const Reinvest = () => {
         </form>
       </div>
     </div>
+    <a href="https://wa.link/y22ett" className=" text-decoration-none">
+		<ImWhatsapp className="absolute right-[5%] bottom-[3%] w-[5%] h-[5%] text-gray-600"/>
+		</a>
+    </Dashboard>
   );
 };
 

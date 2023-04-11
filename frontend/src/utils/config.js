@@ -1,7 +1,8 @@
 const environment = {}
 
 const pageUrls = {
-  login: '/',
+  login: '/login',
+  signup: '/signup',
   dashboard: '/dashboardtwo',
   adminDash: '/adminDash',
   adminDashTwo: '/adminDash2',

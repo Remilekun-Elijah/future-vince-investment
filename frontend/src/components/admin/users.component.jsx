@@ -63,53 +63,53 @@ function Users({ user, that}) {
 
 	return (
 		<tr onClick={async e => await handleClick(e)}>
-			<td className="text-light pt-3">{user.name || user.userName}</td>
+			<td className="text-[var(--C_black_lite)] pt-3">{user.name || user.userName}</td>
 			<td className="pt-3">
-				<a
+				<span
 					href={"mailto:" + user.email}
-					className="text-decoration-none text-light ">
+					className="text-decoration-none bg-gray-300 ">
 					<div className="flex">
 					<BiEnvelope className="mt-1 mr-3"/> 
 					<span>{user.email}</span>
 					</div>
-				</a>
+				</span>
 			</td>
-			<td className="text-light pt-3">{dayjs(user?.user?.lastLogin || user?.user?.createdAt)?.format('DD/MM/YYYY HH:mm')}</td>
-			<td className="text-light pt-3">
+			<td className="text-[var(--C_black_lite)] pt-3">{dayjs(user?.user?.lastLogin || user?.user?.createdAt)?.format('DD/MM/YYYY HH:mm')}</td>
+			<td className="text-[var(--C_black_lite)] pt-3">
 				{getStatus(user?.user?.status)}
 			</td>
 			<td className="pt-3">
 				<div className="flex">
 				<a
 					href="#edit"
-					className="text-decoration-none text-light pt-2"
+					className="text-decoration-none text-[var(--C_black_lite)] pt-2"
 					title="Edit"
 					data-id={user?._id}>
-					<FaEdit onClick={() => setModalShow(true)}/>
+					<FaEdit onClick={() => setModalShow(true)} className="text-gray-800"/>
 				</a>
 				<a
 					href="#delete"
 					data-id={user?.user._id}
-					className="text-decoration-none text-light pt-2 ms-2"
+					className="text-decoration-none text-[var(--C_black_lite)] pt-2 ms-2"
 					title="Delete">
-					<RiDeleteBin5Line />
+					<RiDeleteBin5Line className="text-gray-800"/>
 				</a>
     {
      [0, 1].includes(user?.user?.status) ?
 				<a
 					href="#suspend"
-					className="text-decoration-none text-light pt-2 ms-2"
+					className="text-decoration-none text-[var(--C_black_lite)]  pt-2 ms-2"
 					title="Suspend"
 					data-id={user?.user?._id}>
-					<FaUserAltSlash />
+					<FaUserAltSlash className="text-gray-800"/>
 				</a>
     :
 				<a
 					href="#suspend"
-					className="text-decoration-none text-light pt-2 ms-2"
+					className="text-decoration-none text-[var(--C_black_lite)] pt-2 ms-2"
 					title="Revoke suspension"
 					data-id={user?.user?._id}>
-					<FaUser />
+					<FaUser className="text-gray-800"/>
 				</a>
 } 
 				</div>

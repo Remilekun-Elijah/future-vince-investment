@@ -41,13 +41,13 @@ function App() {
           <Route path="/AboutPage" element={<AboutPage />} />
           <Route path="/ContactPage" element={<SignUp />} />
           <Route
-            path="/login"
+            path={pageUrls.login}
             element={
               <Login isSignedUp={isSignedUp} setIsSignedUp={setIsSignedUp} />
             }
           />
           <Route
-            path="/signup"
+            path={pageUrls.signup}
             element={
               <SignUp isSignedUp={isSignedUp} setIsSignedUp={setIsSignedUp} />
             }

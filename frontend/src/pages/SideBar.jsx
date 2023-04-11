@@ -3,11 +3,14 @@ import React, { useEffect } from "react";
 import styled from "styled-components";
 // import { IMainLogo } from "../../utils/icons";
 import Storage from "../utils/storage";
+import logo from "../images/tesla-3.svg";
+import logoTwo from "../images/btc-logo.png";
 
 
 import { Link, useLocation } from "react-router-dom";
 import links from "../utils/linkTree";
 import config from "../utils/config";
+import history from "../utils/history";
 
 const SidebarSection = styled.div`
 		background-color: var(--c_gray);
@@ -62,8 +65,8 @@ const SidebarSection = styled.div`
         text-decoration: none;
       }
 		&:hover {
-			color: var(--C_secondary);
-			background-color: var(--C_success);
+			color: var(--c_gray_lite);
+			background-color: var(--C_success_two);
 			margin-left: 5px;
 			margin-right: 5px;
 			border-radius: 8px;
@@ -94,7 +97,7 @@ const Sidebar = () => {
 	admin = Storage.get('token'),
 	adminString = JSON.stringify(admin),
 	userString = JSON.stringify(user), 
-	userRole = ((userString && JSON.parse(userString)?.user?.role) || (adminString && JSON.parse(adminString)?.type)),
+	userRole = ((userString && JSON.parse(userString)?.type) || (adminString && JSON.parse(adminString)?.type)),
 		location = useLocation(),
 		[activeLink, setActiveLink] = React.useState(location.pathname);
 		
@@ -109,12 +112,10 @@ const Sidebar = () => {
 			<LogoWrapper className="flex items-center gap-2 ml-3">
 				{/* <Logo src={IMainLogo} alt="logo" /> */}
 				<TitleContainer className="flex flex-col justify-start">
-					<Title className="leading-4 text-sm font-medium">
-						{config.appName}
-					</Title>
-					<SubTitle className="leading-4 text-left font-normal">
-						{config.appMotto}
-					</SubTitle>
+				<Link className="text-white text-decoration-none flex" to="">
+             <img className="logo " src={logo}></img>
+             <img className="logoTwo mt-2" src={logoTwo}></img>
+            </Link>
 				</TitleContainer>
 			</LogoWrapper>
 
@@ -131,7 +132,7 @@ const Sidebar = () => {
 								key={index}
 								className={`${currentUrl ? "active" : ""} py-2`}>
 								{!link.xtra?.icon ? (
-									<Link className="text-decoration-none" to={link.url || ""}>
+									<Link className="text-decoration-none text-gray-100 hover:text-gray-100" to={link.url || ""}>
 										<div className="flex items-center cursor-pointer">
 											{link.icon}
 											<span className="text-lg">{link.name}</span>

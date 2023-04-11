@@ -19,8 +19,9 @@
   --C_secondary: #2B6112;
   --C_primary_hover: #4e942e;
   --C_primary_disabled: #0f2904;
-  --C_gray_lite: #CCD8E1;
+  --C_gray_lite_two: #CCD8E1;
   --C_success: #a2b7c7;
+  --C_success_two: #6687a0;
   --C_danger: #E25353;
   --C_border_danger: #FF2414;
   --C_warning: #FFD56A;
@@ -196,9 +197,8 @@ select:hover, option:hover {
   background-repeat: no-repeat;
   border: 3px solid #cca354 !important;
   border-radius: 10px;
-  width: 220px !important;
+  width: 100% !important;
   height: 400px !important;
-  width: 80% !important;
   box-shadow: 0px 0px 15px #cca354;
   color: #fff;
   font-size: calc(10px + 1.3vmin);

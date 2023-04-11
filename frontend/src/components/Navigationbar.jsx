@@ -8,6 +8,7 @@ import logo from "../images/tesla-3.svg";
 import logoTwo from "../images/btc-logo.png";
 import Scroller from "../components/Scroller";
 
+
 const Navigationbar = ({ isSignedUp, setIsSignedUp }) => {
   return (
     <div>
@@ -31,14 +32,6 @@ const Navigationbar = ({ isSignedUp, setIsSignedUp }) => {
               <Nav.Link href="#">
                 <Link className="text-white text-decoration-none" to="./">
                   Home
-                </Link>
-              </Nav.Link>
-              <Nav.Link href="#">
-                <Link
-                  className="text-white text-decoration-none"
-                  to="/AboutPage"
-                >
-                  About Us
                 </Link>
               </Nav.Link>
               <Nav.Link href="#">

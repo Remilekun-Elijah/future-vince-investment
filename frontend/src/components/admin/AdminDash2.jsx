@@ -106,38 +106,40 @@ class AdminDash2 extends React.Component {
 	
 	render() {
 		return (
-			<div className=" feedback-bg-dash-3 pb-[5%]">
+			<Dashboard >
 				<DashNavbar />
-				<Dashboard />
-				<div className=" w-[63%] m-auto ps-5  pt-[5%]">
-					<h1 className="text-light text-start ms-5 mt-5">
+			<div className="  pb-[5%]">
+				
+				
+				<div className=" w-[100%]    ">
+					<h1 className="text-[var(--C_black_lite)]  text-start  mt-5">
 						Good day, {this.state?.user?.userName}
 					</h1>
-					<p className="text-light text-start ms-5">
+					<p className="text-[var(--C_black_lite)] text-start ">
 						Welcome to your admin dashboard.
 					</p>
-					<div className="flex justify-between m-auto">
-						<div className="card ms-5 mt-5 w-[80%]">
-							<div className="card-body ">
+					<div className="flex justify-between w-[90%] m-auto">
+						<div className="card border-0 mt-5 w-[100%]">
+							<div className="card-body bg-gray-100 rounded-lg drop-shadow-md">
 								<p className="card-text fw-bold text-start mt-2">Total Users</p>
 								<h4 className="card-title text-start pt-4">
-									{new Intl.NumberFormat().format(this.state?.users?.pageCount) || 0}
+									{new Intl.NumberFormat().format(this.state?.users?.pageCount || 0 )}
 								</h4>
 							</div>
 						</div>
-						<div className="card ms-5 mt-5 w-[80%]">
-							<div className="card-body ">
+						<div className="card border-0 ms-5 mt-5 w-[100%]">
+							<div className="card-body bg-gray-100 rounded-lg drop-shadow-md">
 								<p className="card-text fw-bold text-start mt-2">
 									Total Investments
 								</p>
 								<h4 className="card-title text-start pt-4">
-									$ {new Intl.NumberFormat().format(this.state?.user?.bank?.invested) || 0} USD
+									$ {new Intl.NumberFormat().format(this.state?.user?.bank?.invested || 0) } USD
 								</h4>
 							</div>
 						</div>
 					</div>
-					<div className="card mb-5 ms-5 mt-5">
-							<div className="card-body ">
+					<div className="card border-0 mb-5 w-[90%] m-auto mt-5">
+							<div className="card-body bg-gray-100 rounded-lg drop-shadow-md">
 								<div className="d-flex justify-content-between">
 									<p className="card-text fw-bold text-start mt-2">
 										Users Recent Activities
@@ -176,6 +178,7 @@ class AdminDash2 extends React.Component {
 						</div>
 				</div>
 			</div>
+			</Dashboard>
 		);
 	}
 }

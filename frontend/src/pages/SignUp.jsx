@@ -11,6 +11,15 @@ import {
 import { SiFacebook, SiTwitter } from "react-icons/si";
 import Login from "./Login"
 import Action from '../actions/signup'
+import { Link } from "react-router-dom";
+import config from "../utils/config";
+import logo from "../images/tesla-3.svg";
+import logoTwo from "../images/btc-logo.png";
+
+const {
+	pageUrls
+  } = config;
+
 
 const model = {
 	name: "",
@@ -60,10 +69,14 @@ const SignUp = ({setIsSignedUp, isSignedUp}) => {
 	return (
 		(!isSignedUp ? <div className=" backgrnd-0 ">
 			<div className="">
-				<div className="signup-head signUp-border2">
+				<div className="hero-bg  signUp-border2">
+				<Link className="text-white text-decoration-none flex" to="">
+             <img className="logo " src={logo}></img>
+             <img className="logoTwo mt-2" src={logoTwo}></img>
+            </Link>
 					<h3 className="display-5 fw-bold text-start my-5 ms-3 me-5 text-light ">
 						Welcome To <br></br>{" "}
-						<span className="title-spn">Vince Investment</span>
+						<span className="title-spn">Elon Trader</span>
 					</h3>
 				</div>
 				<Form
@@ -234,9 +247,10 @@ const SignUp = ({setIsSignedUp, isSignedUp}) => {
 					
 					<p className="text-start mt-4 text-light">
 						Have an account?{" "}
-						 <a style={{textDecoration: "none"}}
-							 href="#/Login">
-									Login</a>
+						 <Link style={{textDecoration: "none"}}
+						 className="title-spn cursor-pointer"
+							 to={pageUrls.login}>
+									Login</Link>
 					</p>
 				</Form>
 			</div>

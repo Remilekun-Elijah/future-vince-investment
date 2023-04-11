@@ -4,20 +4,13 @@ import { AiOutlineArrowRight } from "react-icons/ai";
 import { useState } from "react";
 import InvestmentPlanModal from "../../modal/InvestmentPlanModal";
 import DashNavbar from "../../DashNavbar";
+import { ImWhatsapp } from "react-icons/im";
 
 const Invest = () => {
   const [modalShow, setModalShow] = useState(false);
   const [modalData, setModalData] = useState({});
 
   const investPlans = [
-    {
-      id: 1,
-      title: "Bronze Plan",
-      roi: "18% ",
-      min: "$100",
-      max: "$999",
-      days: "ROI after 6 Days",
-    },
     {
       id: 2,
       title: "Silver Plan",
@@ -46,18 +39,20 @@ const Invest = () => {
 
 
   return (
-    <div className="row feedback-bg-dash min-h-screen pb-5  overflow-x-hidden">
+    <Dashboard >
       <DashNavbar />
-      <Dashboard />
-      <div className=" col-sm-9 col-7 m-auto me-3 mt-1">
-        <h1 className=" fw-bold  text-light text-start ">Invest</h1>
-        <p className="mt-2 mb-5 text-light text-start">
+    <div className="row relative pb-5  overflow-x-hidden w-[100%]">
+      
+      
+      <div className=" col-sm-12 col-7  me-3 mt-1">
+        <h1 className=" fw-bold  text-[var(--C_black_lite)] text-start mt-5">Invest</h1>
+        <p className="mt-2 mb-5 text-[var(--C_black_lite)] text-start">
           Choose your investment plan
         </p>
-        <div className=" row me-sm-0 me-2">
+        <div className=" grid grid-flow-col gap-4   ">
           {investPlans.map((investmentPlan, index) => (
-            <div className="card col-md-4 col-sm-12  m-2 " key={investmentPlan.id}>
-              <div className="card-body text-start">
+            <div className="card border-0   m-2 " key={investmentPlan.id}>
+              <div className="card-body text-start bg-gray-100 rounded-lg drop-shadow-md ">
                 <h4 className="card-title">{investmentPlan.title}</h4>
                 <h3 className="card-text">{investmentPlan.roi}</h3>
                 <p className="card-text">Minimum: {investmentPlan.min}</p>
@@ -89,6 +84,10 @@ const Invest = () => {
         onHide={() => setModalShow(false)}
       />
     </div>
+    <a href="https://wa.link/y22ett" className=" text-decoration-none">
+		<ImWhatsapp className="absolute right-[5%] bottom-[3%] w-[5%] h-[5%] text-gray-600"/>
+		</a>
+    </Dashboard>
   );
 };
 

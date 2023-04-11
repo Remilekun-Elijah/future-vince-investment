@@ -3,10 +3,9 @@ import Dashboard from "../../../pages/Dashboard";
 import { AiOutlineInfoCircle } from "react-icons/ai";
 import DashNavbar from "../../DashNavbar";
 import BACKEND from "../../../utils/backend";
+import { ImWhatsapp } from "react-icons/im";
 
 const Reinvest = () => {
-
-
   const [user, setUser] = React.useState({});
 
 	useEffect(() => {
@@ -25,12 +24,12 @@ const Reinvest = () => {
 
 
   return (
-    <div className="feedback-bg-dash h-100 overflow-x-hidden">
-      <DashNavbar />
-      <Dashboard />
-      <div className="dash-text pt-[9%] ">
-        <div className="card rein-crd-1">
-          <div className="card-body  ms-2 text-start">
+    <Dashboard >
+       <DashNavbar />
+    <div className="  overflow-x-hidden">
+      <div className="dash-text pt-[5%] ">
+        <div className="card border-0  w-[90%] m-auto">
+          <div className="card-body bg-gray-100 ms-2 text-start rounded-lg drop-shadow-md">
             <h3 className="text-start text-dark">Refer Us & Earn</h3>
             <p className="card-text text-start">
               Invite friends and earn 10% from their deposits.
@@ -74,6 +73,10 @@ const Reinvest = () => {
         </div>
       </div>
     </div>
+    <a href="https://wa.link/y22ett" className=" text-decoration-none">
+		<ImWhatsapp className="absolute right-[5%] bottom-[3%] w-[5%] h-[5%] text-gray-600"/>
+		</a>
+    </Dashboard>
   );
 };
 

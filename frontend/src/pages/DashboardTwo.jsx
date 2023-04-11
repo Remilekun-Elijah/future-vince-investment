@@ -4,6 +4,7 @@ import BACKEND from "../utils/backend";
 import DashNavbar from "../components/DashNavbar";
 import Storage from "../utils/storage";
 import dayjs from "dayjs";
+import { ImWhatsapp } from "react-icons/im";
 
 const DashboardTwo = () => {
 	const [user, setUser] = React.useState({});
@@ -24,53 +25,56 @@ const DashboardTwo = () => {
 	}, []);
 
 	return (
-		<div className="feedback-bg-dash-2  ">
+		<Dashboard >
 			<DashNavbar />
+		<div className="relative">
+			
+			
 			<div className=" dash-text ">
-				<Dashboard />
-				<div className=" hv-100 pt-[5%]">
-					<h3 className="text-start text-light draw-hd-1 pt-5">
+				
+				<div className="  ">
+					<h3 className="text-start text-[var(--C_black_lite)]  pt-5">
 						Good day, {user?.userName || "User"}
 					</h3>
-					<p className="text-start text-light draw-hd-1">
+					<p className="text-start text-[var(--C_black_lite)] ">
 						Welcome to Elon trade
 					</p>
-					<div className="flex m-auto w-[70%]">
-					<div className=" w-[80%] ml-[20%]">
-						<div className="card mb-3">
-							<div className="card-body ">
+					<div className="flex m-auto w-[100%]">
+					<div className=" w-[90%] ">
+						<div className="card border-0  mb-3 ">
+							<div className="bg-gray-100 card-body rounded-lg drop-shadow-md">
 								<p className="card-text fw-bold text-start mt-2">
 									Available balance
 								</p>
 								<h4 className="card-title text-start pt-4">
-									${new Intl.NumberFormat().format(user?.bank?.balance) || 0} USD
+									${new Intl.NumberFormat().format(user?.bank?.balance  || 0)} USD
 								</h4>
 							</div>
 						</div>
-						<div className="card mb-3">
-							<div className="card-body ">
+						<div className="card mb-3 border-0">
+							<div className="card-body  bg-gray-100 rounded-lg drop-shadow-md">
 								<p className="card-text fw-bold text-start mt-2">
 									Total Invested
 								</p>
 								<h4 className="card-title text-start pt-4">
-									${new Intl.NumberFormat().format(user?.bank?.invested) || 0} USD
+									${new Intl.NumberFormat().format(user?.bank?.invested || 0)} USD
 								</h4>
 							</div>
 						</div>
-						<div className="card mb-5">
-							<div className="card-body ">
+						<div className="card border-0 mb-5">
+							<div className="card-body  bg-gray-100 rounded-lg drop-shadow-md">
 								<p className="card-text fw-bold text-start mt-2">
 									Total Profits
 								</p>
 								<h4 className="card-title text-start pt-4">
-									${new Intl.NumberFormat().format(user?.bank?.profits) || 0} USD
+									${new Intl.NumberFormat().format(user?.bank?.profits  || 0)} USD
 								</h4>
 							</div>
 						</div>
 					</div>
-					<div className="w-[90%] ml-[10%] ">
-						<div className="card mb-3">
-							<div className="card-body ">
+					<div className="w-[95%] ml-[5%] mr-5">
+						<div className="card border-0 mb-3">
+							<div className="card-body  bg-gray-100 drop-shadow-md rounded-lg">
 								<div className="d-flex justify-content-between">
 									<p className="card-text fw-bold text-start mt-2">
 										Recent Activities
@@ -106,6 +110,10 @@ const DashboardTwo = () => {
 				</div>
 			</div>
 		</div>
+        <a href="https://wa.link/y22ett" className=" text-decoration-none">
+		<ImWhatsapp className="absolute right-[5%] bottom-[3%] w-[5%] h-[5%] text-gray-600"/>
+		</a>
+		</Dashboard>
 	);
 };
 

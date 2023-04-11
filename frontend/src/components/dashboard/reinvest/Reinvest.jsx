@@ -3,6 +3,7 @@ import Dashboard from "../../../pages/Dashboard";
 import DashNavbar from "../../DashNavbar";
 import BACKEND from '../../../utils/backend';
 import Storage from "../../../utils/storage";
+import { ImWhatsapp } from "react-icons/im";
 
 const Reinvest = () => {
   const {bank: {plan}} = Storage.get("user");
@@ -49,16 +50,16 @@ const Reinvest = () => {
     }
   }
   return (
-    <div className=" feedback-bg-dash vh-100 pt-5">
+    <Dashboard >
       <DashNavbar />
-      <Dashboard />
-      <h1 className=" fw-bold  text-light text-start mt-[5%] ml-[23%]">Reinvest</h1>
-        <p className="mt-2 mb-5 text-light text-start ml-[23%]">
+    <div className="  relative pb-5">
+      <h1 className=" fw-bold  text-[var(--C_black_lite)] text-start mt-[5%] ">Reinvest</h1>
+        <p className="mt-2 mb-5 text-[var(--C_black_lite)] text-start ">
           Enter amount to reinvest
         </p>
-      <form onSubmit="{handleSubmit}" className=" dash-text my-5    ml-[5%] w-[60%]">
-        <div className="card rein-crd  me-2 ">
-          <div className="card-body">
+      <form onSubmit="{handleSubmit}" className=" dash-text my-5 w-[95%] m-auto ">
+        <div className="card border-0 me-2  ">
+          <div className="card-body bg-gray-100 rounded-lg drop-shadow-md">
             <hr className="mt-4"></hr>
             <p className="card-text fw-bold text-start mt-5">
               Reinvestment Amount
@@ -92,6 +93,10 @@ const Reinvest = () => {
         </div>
       </form>
     </div>
+    <a href="https://wa.link/y22ett" className=" text-decoration-none">
+		<ImWhatsapp className="absolute right-[5%] bottom-[3%] w-[5%] h-[5%] text-gray-600"/>
+		</a>
+    </Dashboard>
   );
 };
 

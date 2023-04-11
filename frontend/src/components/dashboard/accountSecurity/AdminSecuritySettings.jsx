@@ -7,13 +7,13 @@ import Dashboard from "../../../pages/Dashboard";
 const AdminSecuritySettings = () => {
   const [modalShow, setModalShow] = useState(false);
   return (
-    <div className="row feedback-bg-dash min-h-screen">
+    <Dashboard >
       <DashNavbar />
-      <Dashboard />
-      <div className="col-8 text-start">
-        <p className="text-light  fw-bold draw-hd-0 ">Security Settings</p>
-        <div className="card rein-crd-2">
-          <div className="card-body row">
+    <div className="row  ">
+      <div className=" text-start">
+        <h1 className="text-[var(--C_black_lite)]  text-start  my-5  ">Security Settings</h1>
+        <div className="card border-0 w-[90%] m-auto">
+          <div className="card-body bg-gray-100 rounded-lg drop-shadow-md row">
             <div className="col-md-8">
               <p className="card-text fw-bold text-start dash-text">
                 Change Password
@@ -33,6 +33,7 @@ const AdminSecuritySettings = () => {
       />
     </div>
     </div>
+    </Dashboard>
   );
 };
 

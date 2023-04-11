@@ -4,14 +4,14 @@ import { AiOutlineMail } from "react-icons/ai";
 
 const Subscribe = () => {
   return (
-    <div className=" sub-bg">
+    <div className=" sub-bg ">
       <div className="row tble_1 p-4 backgrnd1">
         <div className="col-md-5">
           <h1 className="text-start mt-4 text-light">Subscribe Our Newslatter</h1>
         </div>
         <div className="col-md-7 mt-4">
           <form>
-            <InputGroup className="mt-4 ">
+            <InputGroup className="mt-1 ">
               <FormControl
                 className="bg-transparent tble_2 "
                 placeholder="Email Address"
