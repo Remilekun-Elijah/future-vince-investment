@@ -113,7 +113,6 @@ class BankService extends Bank {
 
  static async getTotalInvested() {
   const transactions = await Transaction.find();
-  console.log(transactions);
    const data = transactions.length ? transactions?.map(transaction => transaction?.amount)?.reduce((a, b) => a + b) : 0
   return data
  }
