@@ -32,6 +32,7 @@ environment.development= {
 
   }
 
+  console.log(process.env.NODE_ENV);
 
 export default environment[process.env.NODE_ENV]
 

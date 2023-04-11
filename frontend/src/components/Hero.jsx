@@ -21,14 +21,14 @@ const Hero = ({ isSignedUp, setIsSignedUp }) => {
                   to="/SignUp"
                   onClick={(e) => setIsSignedUp(false)}
                 >
-                  SignUp
+                  Sign up
           </Link>
           <Link
                   className="btn btn-custom mt-4 text-decoration-none"
                   to="/Login"
                   onClick={(e) => setIsSignedUp(true)}
                 >
-                  LogIn
+                  Log in
           </Link>
         </div>
       </div>

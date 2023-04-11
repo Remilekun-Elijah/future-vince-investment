@@ -40,7 +40,7 @@ const Navigationbar = ({ isSignedUp, setIsSignedUp }) => {
                   to="/Login"
                   onClick={(e) => setIsSignedUp(true)}
                 >
-                  LogIn
+                  Log In
                 </Link>
               </Nav.Link>
               <Nav.Link href="#">
@@ -49,7 +49,7 @@ const Navigationbar = ({ isSignedUp, setIsSignedUp }) => {
                   to="/SignUp"
                   onClick={(e) => setIsSignedUp(false)}
                 >
-                  SignUp
+                  Sign Up
                 </Link>
               </Nav.Link>
             </Nav>

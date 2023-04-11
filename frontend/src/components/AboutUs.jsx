@@ -31,7 +31,7 @@ const AboutUs = ({ isSignedUp, setIsSignedUp }) => {
                   to="/SignUp"
                   onClick={(e) => setIsSignedUp(false)}
                 >
-                  SignUp
+                  Sign up
           </Link>
           <div className="my-5 mx-4">
             <iframe
