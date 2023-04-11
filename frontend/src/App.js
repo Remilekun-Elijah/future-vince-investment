@@ -28,14 +28,10 @@ const {
 
 function App() {
   const [isSignedUp, setIsSignedUp] = useState(false);
-  
-  const showTawkToScript = window.location.pathname !== '/';
-
 
   return (
     <div className="App overflow-x-hidden">
       <BrowserRouter>
-        {/* <Navigationbar isSignedUp={isSignedUp} setIsSignedUp={setIsSignedUp}/> */}
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route path="/AboutPage" element={<AboutPage />} />
@@ -72,23 +68,6 @@ function App() {
       </BrowserRouter>
 
       <div>
-    {showTawkToScript ? (
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `
-            var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-            (function(){
-            var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-            s1.async=true;
-            s1.src='https://embed.tawk.to/6432cc714247f20fefeaa87e/1gtj6t7aq';
-            s1.charset='UTF-8';
-            s1.setAttribute('crossorigin','*');
-            s0.parentNode.insertBefore(s1,s0);
-            })();
-          `,
-        }}
-      />
-    ) : null}
   </div>
     </div>
   );

@@ -7,6 +7,7 @@ import propTypes from "prop-types";
 import logo from "../images/tesla-3.svg";
 import logoTwo from "../images/btc-logo.png";
 import Scroller from "../components/Scroller";
+import config from "../utils/config";
 
 
 const Navigationbar = ({ isSignedUp, setIsSignedUp }) => {
@@ -37,7 +38,7 @@ const Navigationbar = ({ isSignedUp, setIsSignedUp }) => {
               <Nav.Link href="#">
                 <Link
                   className="text-white text-decoration-none"
-                  to="/Login"
+                  to={config.pageUrls.login}
                   onClick={(e) => setIsSignedUp(true)}
                 >
                   Log In
@@ -46,7 +47,7 @@ const Navigationbar = ({ isSignedUp, setIsSignedUp }) => {
               <Nav.Link href="#">
                 <Link
                   className="text-white text-decoration-none"
-                  to="/SignUp"
+                  to={config.pageUrls.signup}
                   onClick={(e) => setIsSignedUp(false)}
                 >
                   Sign Up

@@ -60,23 +60,8 @@ const profile = [{
   updatedAt: "2020-04-08T19:07:36.000Z",
  }]
 
-const portfolio =  {
-  _id: new ObjectId(),
-  user: profileId,
-  totalProjectCreated: 5,
-  totalProjectCompleted: 0,
-  roadmap: [],
-  personal: [],
-  myTeam: [],
-  capstone: [],
-  team: [],
-  createdAt: "2022-04-18T04:37:54.270Z",
-  updatedAt: "2022-04-18T04:37:54.270Z"
- };
- 
 
 module.exports = {
   account,
   profile,
-  portfolio
 }

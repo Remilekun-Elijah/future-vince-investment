@@ -57,7 +57,7 @@ const InvestmentPlans = ({ setIsSignedUp }) => {
               </div>
               <Link
                   className=" text-decoration-none"
-                  to="/SignUp"
+                  to="/signup"
                   onClick={(e) => setIsSignedUp(false)}
                 >
                  <button className="btn btn-custom m-auto mb-4">Invest Now</button>

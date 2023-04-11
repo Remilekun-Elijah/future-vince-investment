@@ -18,14 +18,14 @@ const Hero = ({ isSignedUp, setIsSignedUp }) => {
         <div className="pb-4">
           <Link
                   className="btn btn-custom mx-3 mt-4 text-decoration-none"
-                  to="/SignUp"
+                  to="/signup"
                   onClick={(e) => setIsSignedUp(false)}
                 >
                   Sign up
           </Link>
           <Link
                   className="btn btn-custom mt-4 text-decoration-none"
-                  to="/Login"
+                  to="/login"
                   onClick={(e) => setIsSignedUp(true)}
                 >
                   Log in

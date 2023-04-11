@@ -70,7 +70,7 @@ const SignUp = ({setIsSignedUp, isSignedUp}) => {
 		(!isSignedUp ? <div className=" backgrnd-0 ">
 			<div className="">
 				<div className="hero-bg  signUp-border2">
-				<Link className="text-white text-decoration-none flex" to="">
+				<Link className="text-white text-decoration-none flex" to="/">
              <img className="logo " src={logo}></img>
              <img className="logoTwo mt-2" src={logoTwo}></img>
             </Link>

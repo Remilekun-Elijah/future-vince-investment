@@ -28,7 +28,7 @@ const AboutUs = ({ isSignedUp, setIsSignedUp }) => {
           </p>
           <Link
                   className="btn btn-custom mt-2 text-decoration-none"
-                  to="/SignUp"
+                  to="/signup"
                   onClick={(e) => setIsSignedUp(false)}
                 >
                   Sign up

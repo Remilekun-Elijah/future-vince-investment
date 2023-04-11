@@ -9,20 +9,14 @@ import propTypes from "prop-types";
 import SignUp from "./SignUp";
 import BACKEND from "../utils/backend";
 import Storage from "../utils/storage";
-import History from "../utils/history";
 import { useNavigate } from "react-router";
 import config from "../utils/config";
 import { Link } from "react-router-dom";
 import logo from "../images/tesla-3.svg";
 import logoTwo from "../images/btc-logo.png";
 
-const {
-	pageUrls
-  } = config;
 
 const Login = ({ isSignedUp, setIsSignedUp }) => {
-	const navigate = useNavigate()
-
 
 const API = new BACKEND();
 const model = {
@@ -68,7 +62,7 @@ const signin = async (payload) => {
 		<div className=" backgrnd-0 ">
 			<div className="">
 				<div className="hero-bg  signUp-border2">
-				<Link className="text-white text-decoration-none flex" to="">
+				<Link className="text-white text-decoration-none flex" to="/">
              <img className="logo " src={logo}></img>
              <img className="logoTwo mt-2" src={logoTwo}></img>
             </Link>
@@ -111,7 +105,7 @@ const signin = async (payload) => {
 						Haven't an account?{" "}
 						<Link style={{textDecoration: "none"}}
 							className="title-spn cursor-pointer"
-							to={pageUrls.signup}>
+							to={config.pageUrls.signup}>
 							Sign Up
 						</Link>
 					</p>

@@ -1,7 +1,6 @@
 const {
   account,
-  profile,
-  portfolio
+  profile
 } = require('./seeds/superAdmin');
 
 module.exports = {
@@ -10,7 +9,6 @@ module.exports = {
 
       const m = await db.collection('accounts').insertMany(account);
       const o = await db.collection('profiles').insertMany(profile);
-      //  await db.collection('portfolios').insertOne(portfolio);
 
       console.log(m);
       console.log(o);
@@ -34,12 +32,6 @@ module.exports = {
         });
         console.log(prf);
       })
-
-      //  const port = await db.collection('portfolios').deleteMany({
-      //    user: profile._id
-      //  });
-
-      //  console.log(acc, prf, port);
 
     } catch (e) {
       console.log(e);
