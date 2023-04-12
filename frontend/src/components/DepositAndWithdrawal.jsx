@@ -5,7 +5,7 @@ import WithdrawalTable from "./WithdrawalTable";
 
 const DepositAndWithdrawal = () => {
   return (
-    <div className="desc pt-5">
+    <div className="bg-black pt-5 pb-5">
       <div>
       <Tabs
         variant="pills"

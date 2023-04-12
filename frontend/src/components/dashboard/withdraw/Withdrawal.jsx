@@ -39,7 +39,7 @@ const Reinvest = () => {
       <div className=" text-strat w-[90%] pt-[5%]">
         <h1 className="text-[var(--C_black_lite)]  text-start  ">Withdraw</h1>
         <p className="text-[var(--C_black_lite)]  text-start  ">
-          Withdraw funds from your Vince Investment account.
+          Withdraw funds from your Elon Trader account.
         </p>
         <form onSubmit={handleSubmit} className="card w-[95%] m-auto my-5 border-0">
           <div className="card-body bg-gray-100 text-start rounded-lg drop-shadow-md">
@@ -72,7 +72,7 @@ const Reinvest = () => {
       </div>
     </div>
     <a href="https://wa.link/y22ett" className=" text-decoration-none">
-		<ImWhatsapp className="absolute right-[5%] bottom-[3%] w-[5%] h-[5%] text-gray-600"/>
+		<ImWhatsapp className="absolute xl:right-[3px] xl:bottom-[9%] lg:right-[2%] md:right-[5%] md:bottom-[10%] right-[8%] bottom-[8%] md:w-[5%] w-[10%] md:h-[5%] h-[10%] text-gray-600"/>
 		</a>
     </Dashboard>
   );

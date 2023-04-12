@@ -42,8 +42,8 @@ const signin = async (payload) => {
 	console.log(res.data);
   if(res){
     Storage.set("token", res.data)
-				if(res.data.type.toLowerCase() === 'user') window.location.href = "/dashboardtwo"
-    else window.location.href = "/adminDash2"
+				if(res.data.type.toLowerCase() === 'user') window.location.href = "/user/dashboard"
+    else window.location.href = "/admin/dashboard"
   }
 };
 

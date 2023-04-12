@@ -84,7 +84,7 @@ const Profile = () => {
       {/* <EditPhoneModal show={modalShow} onHide={() => setModalShow(false)} /> */}
     </div>
     <a href="https://wa.link/y22ett" className=" text-decoration-none">
-		<ImWhatsapp className="absolute right-[5%] bottom-[3%] w-[5%] h-[5%] text-gray-600"/>
+		<ImWhatsapp className="absolute xl:right-[3px] xl:bottom-[9%] lg:right-[2%] md:right-[5%] md:bottom-[10%] right-[8%] bottom-[8%] md:w-[5%] w-[10%] md:h-[5%] h-[10%] text-gray-600"/>
 		</a>
     </Dashboard>
   );

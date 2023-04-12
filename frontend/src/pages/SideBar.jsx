@@ -9,8 +9,6 @@ import logoTwo from "../images/btc-logo.png";
 
 import { Link, useLocation } from "react-router-dom";
 import links from "../utils/linkTree";
-import config from "../utils/config";
-import history from "../utils/history";
 
 const SidebarSection = styled.div`
 		background-color: var(--c_gray);
@@ -109,12 +107,12 @@ const Sidebar = () => {
 
 	return (
 		<SidebarSection className="pt-14  fixed h-screen  top-0 sidebar scroll">
-			<LogoWrapper className="flex items-center gap-2 ml-3">
+			<LogoWrapper className="flex items-center gap-2">
 				{/* <Logo src={IMainLogo} alt="logo" /> */}
-				<TitleContainer className="flex flex-col justify-start">
-				<Link className="text-white text-decoration-none flex" to="">
-             <img className="logo " src={logo}></img>
-             <img className="logoTwo mt-2" src={logoTwo}></img>
+				<TitleContainer className="md:flex md:flex-col md:justify-start">
+				<Link className="text-white text-decoration-none md:flex" to="">
+             <img className="lg:h-[60px] lg:w-[140px] md:h-[40px] md:w-[110px] w-[150px] h-[30px]" src={logo}></img>
+             <img className="lg:h-[40px] lg:w-[40px] md:h-[30px] md:w-[30px]  mt-2" src={logoTwo}></img>
             </Link>
 				</TitleContainer>
 			</LogoWrapper>
@@ -133,9 +131,9 @@ const Sidebar = () => {
 								className={`${currentUrl ? "active" : ""} py-2`}>
 								{!link.xtra?.icon ? (
 									<Link className="text-decoration-none text-gray-100 hover:text-gray-100" to={link.url || ""}>
-										<div className="flex items-center cursor-pointer">
-											{link.icon}
-											<span className="text-lg">{link.name}</span>
+										<div className="flex md:items-center items-start cursor-pointer">
+											<span className="">{link.icon}</span>
+											<span className="text-lg md:block hidden">{link.name}</span>
 										</div>
 									</Link>
 								) : (

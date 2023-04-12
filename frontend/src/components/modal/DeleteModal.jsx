@@ -44,7 +44,7 @@ function DeleteModal(props) {
         </div>
       </Modal.Body>
       <Modal.Footer className="d-flex justify-content-start mx-5">
-        <Button onClick={editBankData} className="my-4 dash-btn">Update Investment</Button>
+        <Button onClick={editBankData} className="my-4 dash-btn border-0">Update Investment</Button>
         <p className="ms-3 btn fs-6 text-secondary" onClick={props.onHide}>Cancel</p>
       </Modal.Footer>
     </Modal>

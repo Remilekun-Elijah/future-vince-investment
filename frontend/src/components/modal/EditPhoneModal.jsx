@@ -14,7 +14,7 @@ function EditPhoneModal(props) {
       centered
     >
       <Modal.Header className="pt-5" >
-        <p className="modal-title border-bottom border-primary pass-modal ms-5 " id="contained-modal-title-vcenter">Personal</p>
+        <p className="modal-title border-bottom border-secondary pass-modal ms-5 " id="contained-modal-title-vcenter">Personal</p>
       </Modal.Header>
       <Modal.Body className="mx-5">
         <div className="row">
@@ -29,7 +29,7 @@ function EditPhoneModal(props) {
         </div>
       </Modal.Body>
       <Modal.Footer className="d-flex justify-content-start mx-5">
-        <Button className="my-4 dash-btn">Update Profile</Button>
+        <Button className="my-4 dash-btn border-0 ">Update Profile</Button>
         <p className="ms-3 btn fs-6 text-secondary" onClick={props.onHide}>Cancel</p>
       </Modal.Footer>
     </Modal>

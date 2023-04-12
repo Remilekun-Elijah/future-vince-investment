@@ -27,10 +27,11 @@ const Navigationbar = ({ isSignedUp, setIsSignedUp }) => {
              <img className="logoTwo mt-2" src={logoTwo}></img>
             </Link>
           </Navbar.Brand>
-          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-          <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav className="ms-auto">
-              <Nav.Link href="#">
+          <Navbar.Toggle 
+          className="bg-secondary" aria-controls="responsive-navbar-nav" />
+          <Navbar.Collapse id="responsive-navbar-nav ">
+            <Nav className="ms-auto ">
+              <Nav.Link href="#" className="">
                 <Link className="text-white text-decoration-none" to="./">
                   Home
                 </Link>

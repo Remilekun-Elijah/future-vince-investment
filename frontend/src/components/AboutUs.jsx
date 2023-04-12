@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Ieloncrypt from "../images/elon-musk-tesla.webp"
 
 const AboutUs = ({ isSignedUp, setIsSignedUp }) => {
   return (
@@ -33,12 +34,13 @@ const AboutUs = ({ isSignedUp, setIsSignedUp }) => {
                 >
                   Sign up
           </Link>
-          <div className="my-5 mx-4">
-            <iframe
+          <div className="my-5 mx-4 rounded-lg border-4">
+            <img
+              className="rounded-bg"
               height="450"
               width="100%"
-              src="https://www.youtube.com/embed/il_t1WVLNxk"
-            ></iframe>
+              src={Ieloncrypt}
+            ></img>
           </div>
         </div>
       </div>

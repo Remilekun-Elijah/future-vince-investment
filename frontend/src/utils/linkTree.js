@@ -28,7 +28,7 @@ const links = [
     icon: <MdIcons.MdOutlineDashboard  size = {
       "24px"
     }
-    className = "mx-3" / > ,
+    className = "md:mr-3 ml-2  pr-1 md:pr-0" /> ,
     xtra: {
       icon: "",
     }
@@ -40,7 +40,7 @@ const links = [
     icon: <MdIcons.MdOutlineDashboard  size = {
       "24px"
     }
-    className = "mx-3" / > ,
+    className = "md:mr-3 ml-2  pr-1 md:pr-0" /> ,
     xtra: {
       icon: "",
     }
@@ -52,7 +52,7 @@ const links = [
     icon: < RiIcons.RiExchangeDollarLine size = {
       "24px"
     }
-    className = "mx-3" / > ,
+    className = "md:mr-3 ml-2  pr-1 md:pr-0" / > ,
   },
   {
     authorizedUsers: [SuperAdmin],
@@ -61,7 +61,7 @@ const links = [
     icon: < FaIcons.FaUsers size = {
       "24px"
     }
-    className = "mx-3" / > ,
+    className = "md:mr-3 ml-2  pr-1 md:pr-0" / > ,
   },
   {
     authorizedUsers: [User],
@@ -70,7 +70,7 @@ const links = [
     icon: <BsIcons.BsBoxArrowLeft size = {
       "24px"
     }
-    className = "mx-3" / > ,
+    className = "md:mr-3 ml-2  pr-1 md:pr-0" / > ,
   },
 
   {
@@ -80,7 +80,7 @@ const links = [
     icon: <BsIcons.BsBoxArrowRight size = {
       "24px"
     }
-    className = "mx-3" / > ,
+    className = "md:mr-3 ml-2  pr-1 md:pr-0" / > ,
   },
   {
     authorizedUsers: [User],
@@ -89,7 +89,7 @@ const links = [
     icon: <FiIcons.FiUserPlus size = {
       "24px"
     }
-    className = "mx-3" / > ,
+    className = "md:mr-3 ml-2  pr-1 md:pr-0" / > ,
   },
   {
     authorizedUsers: [User],
@@ -98,25 +98,25 @@ const links = [
     icon: <FiIcons.FiUser size = {
       "24px"
     }
-    className = "mx-3" / > ,
+    className = "md:mr-3 ml-2  pr-1 md:pr-0" / > ,
   },
   {
     authorizedUsers: [User],
-    name: "Account Security",
+    name: "Settings",
     url: pageUrls.security,
     icon: <BiIcons.BiLockAlt size = {
       "24px"
     }
-    className = "mx-3" / > ,
+    className = "md:mr-3 ml-2  pr-1 md:pr-0" / > ,
   },
   {
     authorizedUsers: [SuperAdmin],
-    name: "Account Security",
+    name: "Settings",
     url: pageUrls.adminSecuritySettings,
     icon: <BiIcons.BiLockAlt size = {
       "24px"
     }
-    className = "mx-3" / > ,
+    className = "md:mr-3 ml-2  pr-1 md:pr-0" / > ,
   }
 ]
 

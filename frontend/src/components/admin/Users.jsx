@@ -33,9 +33,12 @@ class Users extends React.Component {
 			<Dashboard >
 				<DashNavbar />
 			<div className="row  ">
-				<div className="text-start m-auto row mt-5  w-[90%] m-auto">
-					<h1 className=" text-[var(--C_black_lite)]">Users</h1>
-					<table className="table table-style col-md-12  mt-5 text-[var(--C_black_lite)] ">
+				<div className="w-[90%] mt-5 m-auto">
+				<h1 className="text-start text-[var(--C_black_lite)]">Users</h1>
+			    </div>
+				
+				<div className="text-start  w-[90%] m-auto overflow-auto md:overflow-visible">
+					<table className="table table-style  w-[100%]  mt-5 text-[var(--C_black_lite)] ">
 						<thead className="text-[var(--C_black_lite)]">
 							<tr>
 								<th>Name</th>
@@ -45,7 +48,7 @@ class Users extends React.Component {
 								<th>Action</th>
 							</tr>
 						</thead>
-						<tbody>
+						<tbody className="w-[90%] ">
 							{this.state?.users?.map((user, i) => {
 								return <UsersTable user={user} key={user._id} that={this}/>;
 							})}

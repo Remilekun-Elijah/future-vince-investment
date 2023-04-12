@@ -19,7 +19,6 @@ import AdminDash2 from "./components/admin/AdminDash2";
 import { useState } from "react";
 import "tailwindcss/tailwind.css"
 import config from "./utils/config";
-// import DeleteModal from './components/modal/DeleteModal'
 
 
 const {
@@ -33,7 +32,7 @@ function App() {
     <div className="App overflow-x-hidden">
       <BrowserRouter>
         <Routes>
-          <Route exact path="/" element={<Home />} />
+          <Route exact path={pageUrls.home} element={<Home />} />
           <Route path="/AboutPage" element={<AboutPage />} />
           <Route path="/ContactPage" element={<SignUp />} />
           <Route
@@ -63,7 +62,6 @@ function App() {
           <Route path={pageUrls.users} element={<Users />} />
           <Route path={pageUrls.adminDash} element={<AdminDash />} />
           <Route path={pageUrls.adminDashTwo} element={<AdminDash2 />} />
-          {/* <Route path="/deleteModal" element={<DeleteModal />}/> */}
         </Routes>
       </BrowserRouter>
 

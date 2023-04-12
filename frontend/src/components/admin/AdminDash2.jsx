@@ -118,7 +118,7 @@ class AdminDash2 extends React.Component {
 					<p className="text-[var(--C_black_lite)] text-start ">
 						Welcome to your admin dashboard.
 					</p>
-					<div className="flex justify-between w-[90%] m-auto">
+					<div className="md:flex md:justify-between w-[90%] m-auto">
 						<div className="card border-0 mt-5 w-[100%]">
 							<div className="card-body bg-gray-100 rounded-lg drop-shadow-md">
 								<p className="card-text fw-bold text-start mt-2">Total Users</p>
@@ -127,7 +127,7 @@ class AdminDash2 extends React.Component {
 								</h4>
 							</div>
 						</div>
-						<div className="card border-0 ms-5 mt-5 w-[100%]">
+						<div className="card border-0 md:ms-5 mt-5 w-[100%]">
 							<div className="card-body bg-gray-100 rounded-lg drop-shadow-md">
 								<p className="card-text fw-bold text-start mt-2">
 									Total Investments

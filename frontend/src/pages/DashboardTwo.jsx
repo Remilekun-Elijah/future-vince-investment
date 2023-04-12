@@ -39,7 +39,7 @@ const DashboardTwo = () => {
 					<p className="text-start text-[var(--C_black_lite)] ">
 						Welcome to Elon trader
 					</p>
-					<div className="flex m-auto w-[100%]">
+					<div className="md:flex m-auto w-[100%] pb-5">
 					<div className=" w-[90%] ">
 						<div className="card border-0  mb-3 ">
 							<div className="bg-gray-100 card-body rounded-lg drop-shadow-md">
@@ -72,7 +72,7 @@ const DashboardTwo = () => {
 							</div>
 						</div>
 					</div>
-					<div className="w-[95%] ml-[5%] mr-5">
+					<div className="w-[90%] md:ml-[5%] mr-5">
 						<div className="card border-0 mb-3">
 							<div className="card-body  bg-gray-100 drop-shadow-md rounded-lg">
 								<div className="d-flex justify-content-between">
@@ -111,7 +111,7 @@ const DashboardTwo = () => {
 			</div>
 		</div>
         <a href="https://wa.link/y22ett" className=" text-decoration-none">
-		<ImWhatsapp className="absolute right-[5%] bottom-[3%] w-[5%] h-[5%] text-gray-600"/>
+		<ImWhatsapp className="absolute xl:right-[3px] xl:bottom-[9%] lg:right-[2%] md:right-[5%] md:bottom-[10%] right-[8%] bottom-[8%] md:w-[5%] w-[10%] md:h-[5%] h-[10%] text-gray-600"/>
 		</a>
 		</Dashboard>
 	);

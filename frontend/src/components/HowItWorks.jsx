@@ -23,7 +23,7 @@ const HowItWorks = () => {
     },
   ];
   return (
-    <div className="team-bg ">
+    <div className="team-bg pb-5">
       <h1 className="mt-5 py-5 text-light display-4">
         How Elon <span className="title-spn">Trader Works</span>
       </h1>
@@ -31,9 +31,9 @@ const HowItWorks = () => {
         Get involved in our tremendous platform and Invest. We will utilize your
         money and give you profit in <br></br> your wallet automatically.
       </p>
-      <div className="row ">
+      <div className="md:flex gap-4">
         {howItWorks.map((item) => (
-          <div className="col-4 mx-2 border-0 wcv my-5" key={item.id}>
+          <div className="w-[80%] m-auto border-0 wcv my-5" key={item.id}>
             <div className="hIworks  bg-dark">
               <p className="hIworks-id bg-dark ">{item.id}</p>
               <img className="ml-7" src={item.img} alt={item.title} />

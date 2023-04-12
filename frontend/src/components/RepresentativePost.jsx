@@ -13,7 +13,7 @@ const RepresentativePost = ({ setIsSignedUp }) => {
         </p>
         <Link
                   className=" text-decoration-none"
-                  to="/SignUp"
+                  to="/signup"
                   onClick={(e) => setIsSignedUp(false)}
                 >
         <button className="btn btn-custom m-auto my-4">Join Us</button>

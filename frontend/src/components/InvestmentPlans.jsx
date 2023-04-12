@@ -38,10 +38,10 @@ const InvestmentPlans = ({ setIsSignedUp }) => {
         To make a solid investment, you have to know where you are investing.
         Find a plan <br></br> which is best for you.
       </p>
-      <div className="flex py-5 justify-around">
+      <div className="md:flex py-5 gap-10 m-auto w-[80%]">
         {investmentPlans.map((investmentPlan) => (
-          <div className="">
-            <div className=" cdStyles mx-auto my-2 px-4">
+          <div className="w-[95%]">
+            <div className=" cdStyles  my-2 px-4">
               <div className="pt-3">
                 <h3 className="title-spn mt-4">{investmentPlan.title}</h3>
               </div>

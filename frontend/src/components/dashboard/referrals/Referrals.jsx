@@ -28,8 +28,8 @@ const Reinvest = () => {
        <DashNavbar />
     <div className="  overflow-x-hidden">
       <div className="dash-text pt-[5%] ">
-        <div className="card border-0  w-[90%] m-auto">
-          <div className="card-body bg-gray-100 ms-2 text-start rounded-lg drop-shadow-md">
+        <div className="card border-0  md:w-[90%] w-[95%] m-auto">
+          <div className="card-body  bg-gray-100 text-start rounded-lg drop-shadow-md">
             <h3 className="text-start text-dark">Refer Us & Earn</h3>
             <p className="card-text text-start">
               Invite friends and earn 10% from their deposits.
@@ -54,9 +54,9 @@ const Reinvest = () => {
               <AiOutlineInfoCircle />
               </div>
               <div className="col-md-4">
-                <h6 className=" ms-2">Referee</h6>
+                <h6 className=" ">Referee</h6>
                 <hr></hr>
-                <p className="text-secondary ms-2">Tom Golden</p>
+                <p className="text-secondary ">Tom Golden</p>
               </div>
               <div className="col-md-4">
                 <h6 className="">Bonus</h6>
@@ -74,7 +74,7 @@ const Reinvest = () => {
       </div>
     </div>
     <a href="https://wa.link/y22ett" className=" text-decoration-none">
-		<ImWhatsapp className="absolute right-[5%] bottom-[3%] w-[5%] h-[5%] text-gray-600"/>
+		<ImWhatsapp className="absolute xl:right-[3px] xl:bottom-[9%] lg:right-[2%] md:right-[5%] md:bottom-[10%] right-[8%] bottom-[8%] md:w-[5%] w-[10%] md:h-[5%] h-[10%] text-gray-600"/>
 		</a>
     </Dashboard>
   );

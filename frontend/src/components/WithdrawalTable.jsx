@@ -3,7 +3,7 @@ import { Table } from "react-bootstrap";
 
 const withdrawalTable = () => {
   return (
-    <div>
+    <div className="">
       <Table striped bordered hover variant="dark" className="tble mb-5">
         <thead className="text-start ">
           <tr className="t-head">

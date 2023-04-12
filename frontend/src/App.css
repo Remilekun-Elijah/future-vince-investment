@@ -875,8 +875,9 @@ select:hover, option:hover {
 }
 
 .dash-btn {
-  background-color: #4567fc !important;
-  color: #fff !important;
+  background-color: var(--C_success) !important;
+  color: #fff !important;  
+  font-size: 14px !important;
 }
 
 .basic {
@@ -901,8 +902,7 @@ select:hover, option:hover {
 }
 
 .table-style {
-  width: 100% !important;
-  /* margin-top: 10% !important; */
+  width: 98% !important;
   margin-bottom: 40% !important;
 }
 
@@ -962,7 +962,7 @@ select:hover, option:hover {
 }
 
 .pass-modal {
-  color: #6675fc;
+  color: var(--C_black_lite);
   font-size: 1.2em;
   font-weight: bold;
 }

@@ -166,8 +166,9 @@ function InvestmentPlanModal(props) {
           </div>
         </Modal.Body>
         <Modal.Footer>
-          <Button type="submit">Proceed</Button>
+          <Button className="dash-btn border-0" type="submit">Proceed</Button>
           <Button
+            className="dash-btn border-0"
             onClick={(_) => {
               onHide();
               setModelState(model);
