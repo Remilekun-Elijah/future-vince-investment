@@ -37,7 +37,7 @@ const DashboardTwo = () => {
 						Good day, {user?.userName || "User"}
 					</h3>
 					<p className="text-start text-[var(--C_black_lite)] ">
-						Welcome to Elon trade
+						Welcome to Elon trader
 					</p>
 					<div className="flex m-auto w-[100%]">
 					<div className=" w-[90%] ">
@@ -93,7 +93,7 @@ const DashboardTwo = () => {
 												</span>
 												<br></br>
 												<span className="card-title text-start ">
-                        {dayjs(activity.createdAt).format("DD/MM/YYYY mm:hh")}
+                        {dayjs(activity.createdAt).format("DD/MM/YYYY hh:mm")}
 												</span>
 												<br></br>
 												<span className="card-text text-start">{activity.status === 0?'Awaiting confirmation': activity.status === 1 ? 'Confirmed' : 'Declined'}</span>

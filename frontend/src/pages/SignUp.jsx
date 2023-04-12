@@ -260,7 +260,7 @@ const SignUp = ({setIsSignedUp, isSignedUp}) => {
         <span >2022</span>
         </div>
       
-          <p className=""> Elon Trade. All rights reserved</p>
+          <p className=""> Elon Trader. All rights reserved</p>
         <div className="flex justify-between  ">
           <a href="https://facebook.com"> 
           <SiFacebook className="me-2 text-white" /> 
