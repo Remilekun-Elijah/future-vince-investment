@@ -69,7 +69,10 @@ global.io.on("connection", (client) => {
 });
 
 const port = app.get("port");
-server.listen(port, () => {
-  logger.info(`Server started on port ${port} 🚀`);
-  database.connect(config.mongodb_uri);
-});
+const startup = () => {
+  server.listen(port, () => {
+    logger.info(`Server started on port ${port} 🚀`);
+  });
+};
+
+database.connect(config.mongodb_uri, startup);
