@@ -75,7 +75,7 @@ app.use(
   fileupload(configData)
 );
 
-database.connect(config.mongodb_uri);
+
 
 app.use(express.static(path.resolve(__dirname, "../public")));
 app.set("view engine", "ejs");

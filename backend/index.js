@@ -7,7 +7,7 @@ const { createServer } = require("http");
 const fs = require("fs");
 const config = require("./configs/config");
 const path = require("path");
-const bc = require("bcrypt");
+const database = require("./configs/database");
 
 global.logger = require("./logger");
 const app = require("./configs/express");
@@ -71,4 +71,5 @@ global.io.on("connection", (client) => {
 const port = app.get("port");
 server.listen(port, () => {
   logger.info(`Server started on port ${port} 🚀`);
+  database.connect(config.mongodb_uri);
 });
