@@ -1,18 +1,18 @@
 /*jslint node: true */
 // jshint esversion:8
-'use strict';
+"use strict";
 
-const { Server } = require('socket.io');  
-const { createServer } = require('http');
-const fs = require('fs');
-const config = require('./configs/config');
-const path = require('path');
+const { Server } = require("socket.io");
+const { createServer } = require("http");
+const fs = require("fs");
+const config = require("./configs/config");
+const path = require("path");
+const bc = require("bcrypt");
 
-global.logger = require('./logger');
-const app = require('./configs/express');
+global.logger = require("./logger");
+const app = require("./configs/express");
 
-logger.info('Logger is ready');
-
+logger.info("Logger is ready");
 
 const options = {
   key: fs.readFileSync(path.resolve(config.server_key)),
@@ -25,7 +25,7 @@ const server = createServer(options, app);
 
 global.io = new Server(server, {
   cors: {
-    origin: '*',
+    origin: "*",
   },
   serveClient: false,
   // transports: ['polling', 'websocket'],
@@ -34,41 +34,41 @@ global.io = new Server(server, {
 
 let users = [];
 
-global.io.engine.on('connection_error', (err) => {
-  logger.error('socket_connection_error', err);
+global.io.engine.on("connection_error", (err) => {
+  logger.error("socket_connection_error", err);
 });
 
-global.io.on('connection', (client) => {
-  logger.info('connected', client.id);
+global.io.on("connection", (client) => {
+  logger.info("connected", client.id);
   // event fired when the chat room is disconnected
-  client.on('disconnect', () => {
+  client.on("disconnect", () => {
     users = users.filter((user) => user.socketId !== client.id);
-    logger.warn('disconnect', users);
+    logger.warn("disconnect", users);
   });
 
   // add identity of user mapped to the socket id
-  client.on('identity', (userId) => {
+  client.on("identity", (userId) => {
     users.push({
       socketId: client.id,
       userId: userId,
     });
 
-    logger.info('identity', users);
+    logger.info("identity", users);
   });
 
   // subscribe person to chat & other user as well
-  client.on('subscribe', (roomId, otherUserId = '') => {
+  client.on("subscribe", (roomId, otherUserId = "") => {
     client.join(roomId);
-    logger.info('subscribe', [roomId, otherUserId, users]);
+    logger.info("subscribe", [roomId, otherUserId, users]);
   });
 
   // mute a chat room
-  client.on('unsubscribe', (roomId) => {
+  client.on("unsubscribe", (roomId) => {
     client.leave(roomId);
   });
 });
 
-const port = app.get('port');
+const port = app.get("port");
 server.listen(port, () => {
   logger.info(`Server started on port ${port} 🚀`);
 });

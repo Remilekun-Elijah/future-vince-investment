@@ -1,13 +1,11 @@
 /*jslint node: true */
 // jshint esversion:8
 
-'use strict';
-const path = require('path');
-const AccountModel = require('../modules/account/model');
-const {
-  ProfileModel
-} = require(path.resolve('modules/profile/model'));
-const dayjs = require('dayjs');
+"use strict";
+const path = require("path");
+const AccountModel = require("../modules/account/model");
+const { ProfileModel } = require(path.resolve("modules/profile/model"));
+const dayjs = require("dayjs");
 
 const {
   HTTP_OK,
@@ -17,17 +15,17 @@ const {
   HTTP_CONFLICT,
   HTTP_CREATED,
   HTTP_FORBIDDEN,
-} = require('../utils/http.response.code');
-const responseMessage = require('../utils/http.response.message');
+} = require("../utils/http.response.code");
+const responseMessage = require("../utils/http.response.message");
 const MailNotificationService = require(path.resolve(
-  'services',
-  'mail.notification.service'
+  "services",
+  "mail.notification.service"
 ));
-const ProfileService = require('./profile.service');
-const Notification = require('./notification.service');
-const Bank = require('./bank.service');
+const ProfileService = require("./profile.service");
+const Notification = require("./notification.service");
+const Bank = require("./bank.service");
 
-const ApiResponse = require(path.resolve('utils', 'http.response'));
+const ApiResponse = require(path.resolve("utils", "http.response"));
 
 const {
   ADMIN,
@@ -36,8 +34,8 @@ const {
   ACTIVE,
   INACTIVE,
   SUSPENDED,
-  DELETED
-} = require('../utils/role');
+  DELETED,
+} = require("../utils/role");
 
 // const status = {
 //   inactive: 0,
@@ -45,15 +43,12 @@ const {
 //   suspend: 2
 // }
 
-
 class Account extends AccountModel {
   static async getAccountById(id, filter) {
     try {
       const account = await this.findById(id);
       if (account) {
-        const result = filter ?
-          H.filter(account._doc, filter) :
-          account._doc;
+        const result = filter ? H.filter(account._doc, filter) : account._doc;
         return ApiResponse.gen(
           HTTP_OK,
           responseMessage.ACCOUNT_RETRIEVED,
@@ -78,9 +73,7 @@ class Account extends AccountModel {
       email,
     });
     if (account) {
-      const result = filter ?
-        H.filter(account._doc, filter) :
-        account._doc;
+      const result = filter ? H.filter(account._doc, filter) : account._doc;
       return result;
     }
     return null;
@@ -88,11 +81,7 @@ class Account extends AccountModel {
 
   static async createAccount(body) {
     try {
-      let {
-        email,
-        password,
-        type
-      } = body;
+      let { email, password, type } = body;
       type = H.getRoleNumber(type || "user");
       const user = await this.getAccountByEmail(email);
 
@@ -108,8 +97,6 @@ class Account extends AccountModel {
         };
 
         if ([ADMIN, SUPERADMIN].includes(type) === false) {
-
-
         }
         const account = await this.create(data);
 
@@ -117,9 +104,9 @@ class Account extends AccountModel {
         const profile = await ProfileService.setUpProfile(account._id, body);
 
         // setup bank
-        await Bank.open(profile._id)
+        await Bank.open(profile._id);
         // setup notification activity
-        await Notification.init(profile._id)
+        await Notification.init(profile._id);
 
         if ([USER].includes(type)) {
           profile.role = account.role;
@@ -134,7 +121,6 @@ class Account extends AccountModel {
             to: email,
             name: profile.name,
           });
-
         } else {
           // send notification
           await MailNotificationService.sendVerificationEmail({
@@ -142,7 +128,6 @@ class Account extends AccountModel {
             name: profile.firstNam,
           });
         }
-
 
         return ApiResponse.gen(HTTP_CREATED, responseMessage.ACCOUNT_CREATED);
       } else {
@@ -162,13 +147,10 @@ class Account extends AccountModel {
     }
   }
 
-  static async login({
-    email,
-    password
-  }, referrer) {
+  static async login({ email, password }, referrer) {
     try {
       let user = await this.getAccountByEmail(email);
-      console.log(user);
+
       if (user) {
         if ([USER].includes(user.role) && referrer == ADMIN) {
           throw ApiResponse.gen(
@@ -184,19 +166,14 @@ class Account extends AccountModel {
             responseMessage.ONLY_FELLOWS_ACCESS
           );
         }
-        // console.log([USER, ADMIN].includes(user.role) &&
-        // user.status === SUSPENDED)
-        if (
-          [USER, ADMIN].includes(user.role) &&
-          user.status === SUSPENDED
-        )
+        if ([USER, ADMIN].includes(user.role) && user?.status === SUSPENDED)
           throw ApiResponse.gen(
             HTTP_FORBIDDEN,
             responseMessage.ACCOUNT_SUSPENDED
           );
         else if (
           [USER, ADMIN, SUPERADMIN].includes(user.role) &&
-          user.status === DELETED
+          user?.status === DELETED
         )
           throw ApiResponse.gen(
             HTTP_FORBIDDEN,
@@ -216,17 +193,14 @@ class Account extends AccountModel {
 
           // update last login
           await this.findByIdAndUpdate(user._id, {
-            lastLogin: dayjs(new Date()).format('YYYY-MM-DD HH:mm'),
+            lastLogin: dayjs(new Date()).format("YYYY-MM-DD HH:mm"),
           });
-console.log(H.getRoleName, user);
-          return ApiResponse.gen(
-            HTTP_OK,
-            responseMessage.ACCOUNT_LOGGED_IN, {
-              token,
-              type: H.getRoleName(user.role),
-              user: profile
-            }
-          );
+          
+          return ApiResponse.gen(HTTP_OK, responseMessage.ACCOUNT_LOGGED_IN, {
+            token,
+            type: H.getRoleName(user.role),
+            user: profile,
+          });
         }
 
         throw ApiResponse.gen(
@@ -238,10 +212,11 @@ console.log(H.getRoleName, user);
     } catch (err) {
       logger.error(err.type);
       if (err.code) throw err;
-      else throw ApiResponse.gen(
-        HTTP_INTERNAL_SERVER_ERROR,
-        responseMessage.INTERNAL_SERVER_ERROR
-      );
+      else
+        throw ApiResponse.gen(
+          HTTP_INTERNAL_SERVER_ERROR,
+          responseMessage.INTERNAL_SERVER_ERROR
+        );
     }
   }
 
@@ -255,11 +230,9 @@ console.log(H.getRoleName, user);
           responseMessage.ACCOUNT_NOT_FOUND
         );
       }
-      const {
-        name
-      } = await ProfileService.getProfileByAccountId({
+      const { name } = await ProfileService.getProfileByAccountId({
         user: id,
-        filter: 'name',
+        filter: "name",
       });
 
       if ([ACTIVE, INACTIVE].includes(user.status)) {
@@ -321,11 +294,9 @@ console.log(H.getRoleName, user);
   static async updateApplicationStatus(id, status) {
     try {
       const user = await this.findById(id);
-      const {
-        name
-      } = await ProfileService.getProfileByAccountId({
+      const { name } = await ProfileService.getProfileByAccountId({
         user: id,
-        filter: 'name',
+        filter: "name",
       });
       if (!user)
         throw ApiResponse.gen(
@@ -335,7 +306,7 @@ console.log(H.getRoleName, user);
 
       let updated = await this.findByIdAndUpdate(id, {
         applicationStatus: status,
-        isEnabled: status.toLowerCase() === 'accepted' ? true : false,
+        isEnabled: status.toLowerCase() === "accepted" ? true : false,
       });
 
       if (updated) {
@@ -346,7 +317,7 @@ console.log(H.getRoleName, user);
           status: updated.applicationStatus,
           defaultPassword: H.decrypt(updated.defaultPassword),
         });
-        if (updated.applicationStatus === 'accepted') {
+        if (updated.applicationStatus === "accepted") {
           // send account verification email
           await MailNotificationService.sendVerificationEmail({
             to: user.email,
@@ -397,11 +368,9 @@ console.log(H.getRoleName, user);
   static async deleteAccount(id) {
     try {
       const account = await this.findByIdAndDelete(id);
-      const {
-        name
-      } = await ProfileService.getProfileByAccountId({
+      const { name } = await ProfileService.getProfileByAccountId({
         user: id,
-        filter: 'name',
+        filter: "name",
       });
       if (account) {
         // send notification
@@ -432,14 +401,10 @@ console.log(H.getRoleName, user);
 
   static async resendVerificationEmail(id, pid) {
     try {
-      const {
-        data
-      } = await this.getAccountById(id);
-      const {
-        name
-      } = await ProfileService.getProfileByAccountId({
+      const { data } = await this.getAccountById(id);
+      const { name } = await ProfileService.getProfileByAccountId({
         user: id,
-        filter: 'name',
+        filter: "name",
       });
       if (data) {
         // send notification
@@ -469,11 +434,11 @@ console.log(H.getRoleName, user);
       const token = H.decrypt(secure);
       const user = H.verifyToken(token);
 
-      if (user === 'token_expired' || user === 'invalid signature') {
+      if (user === "token_expired" || user === "invalid signature") {
         throw ApiResponse.gen(HTTP_BAD_REQUEST, responseMessage.LINK_EXPIRED);
       }
 
-      if (user === 'token_expired' || user === 'invalid signature') {
+      if (user === "token_expired" || user === "invalid signature") {
         throw ApiResponse.gen(HTTP_BAD_REQUEST, responseMessage.LINK_EXPIRED);
       }
 
@@ -510,11 +475,9 @@ console.log(H.getRoleName, user);
   static async changePassword(id, data) {
     try {
       const account = await this.findById(id);
-      const {
-        name
-      } = await ProfileService.getProfileByAccountId({
+      const { name } = await ProfileService.getProfileByAccountId({
         user: id,
-        filter: 'name',
+        filter: "name",
       });
 
       const passwordMatches = H.comparePassword(
@@ -530,8 +493,7 @@ console.log(H.getRoleName, user);
       // ensures that the new password is not one of the old passwords
       let isUsedPassword = false;
       for (let archivedPassword of account.passwordArchived) {
-        if (H.decrypt(archivedPassword) == data.password)
-          isUsedPassword = true;
+        if (H.decrypt(archivedPassword) == data.password) isUsedPassword = true;
       }
       if (isUsedPassword) {
         throw ApiResponse.gen(
@@ -587,11 +549,9 @@ console.log(H.getRoleName, user);
     if (!user) {
       throw ApiResponse.gen(HTTP_NOT_FOUND, responseMessage.ACCOUNT_NOT_FOUND);
     }
-    const {
-      name
-    } = await ProfileService.getProfileByAccountId({
+    const { name } = await ProfileService.getProfileByAccountId({
       user: user._id,
-      filter: 'name',
+      filter: "name",
     });
     await MailNotificationService.sendResetPasswordMail({
       to: email,
@@ -607,7 +567,7 @@ console.log(H.getRoleName, user);
       const token = H.decrypt(data.secure);
       const user = H.verifyToken(token);
 
-      if (user === 'token_expired' || user === 'invalid signature') {
+      if (user === "token_expired" || user === "invalid signature") {
         throw ApiResponse.gen(HTTP_BAD_REQUEST, responseMessage.LINK_EXPIRED);
       }
       if (token) {
@@ -654,15 +614,11 @@ console.log(H.getRoleName, user);
   }
 
   static async getAllUsers(data) {
-    let {
-      type,
-      email,
-      createdAt,
-    } = data;
+    let { type, email, createdAt } = data;
 
     data.limit = parseInt(data.limit) || 10;
     data.skip = parseInt(data.skip) > 0 ? parseInt(data.skip) - 1 : 0;
-    type = type || USER
+    type = type || USER;
     try {
       let filter = {
         role: type,
@@ -681,7 +637,7 @@ console.log(H.getRoleName, user);
         date.setHours(0, 0, 0, 0);
         filter.createdAt = {
           $gte: dayjs(date)
-            .subtract(createdAt || 7, 'day')
+            .subtract(createdAt || 7, "day")
             .toISOString(),
         };
       }
@@ -695,11 +651,10 @@ console.log(H.getRoleName, user);
 
       let userIds = users.map((user) => user._id);
 
-      users = await ProfileModel
-        .find(filter)
-        .where('user')
+      users = await ProfileModel.find(filter)
+        .where("user")
         .in(userIds)
-        .populate('user')
+        .populate("user")
         .sort({
           createdAt: -1,
         })
@@ -716,7 +671,7 @@ console.log(H.getRoleName, user);
         perPage: parseInt(data.limit) || pageCount,
         pageCount: users.length,
       };
-      return ApiResponse.gen(HTTP_OK, 'Retrieved successfully', data);
+      return ApiResponse.gen(HTTP_OK, "Retrieved successfully", data);
     } catch (err) {
       // logger.error(err);
       if (err.code) throw err;
@@ -740,20 +695,22 @@ console.log(H.getRoleName, user);
       const filter = {
         lastLogin: {
           $gte: dayjs(new Date())
-            .subtract(obj.for || 3, 'day')
-            .format('YYYY-MM-DD'),
+            .subtract(obj.for || 3, "day")
+            .format("YYYY-MM-DD"),
         },
         ...filt,
       };
 
-      const aggregation = [{
-        $lookup: {
-          from: 'profiles',
-          localField: '_id',
-          foreignField: 'user',
-          as: 'profile',
-        }
-      }];
+      const aggregation = [
+        {
+          $lookup: {
+            from: "profiles",
+            localField: "_id",
+            foreignField: "user",
+            as: "profile",
+          },
+        },
+      ];
 
       obj.limit = parseInt(obj.limit) || 10;
       obj.skip = parseInt(obj.skip) > 0 ? parseInt(obj.skip) - 1 : 0;
@@ -780,7 +737,7 @@ console.log(H.getRoleName, user);
         pageCount: users.length,
       };
 
-      return ApiResponse.gen(HTTP_OK, 'Retrieved successfully', data);
+      return ApiResponse.gen(HTTP_OK, "Retrieved successfully", data);
     } catch (e) {
       throw ApiResponse.gen(
         HTTP_INTERNAL_SERVER_ERROR,
@@ -789,37 +746,33 @@ console.log(H.getRoleName, user);
     }
   }
 
-  static async upgradeUser(id, {
-    type
-  }) {
-    const {
-      data
-    } = await this.getAccountById(id, 'role');
-    logger.warn(data.role, type)
+  static async upgradeUser(id, { type }) {
+    const { data } = await this.getAccountById(id, "role");
+    logger.warn(data.role, type);
     if (data.role === type) {
-      throw ApiResponse.gen(HTTP_CONFLICT, `User is already a ${type.toUpperCase()}`);
+      throw ApiResponse.gen(
+        HTTP_CONFLICT,
+        `User is already a ${type.toUpperCase()}`
+      );
     }
     const user = await this.findByIdAndUpdate(id, {
       role: type,
     });
 
     if (user) {
-
       if (type === ADMIN) {
-        const {
-          name
-        } = await ProfileService.getProfileByAccountId({
+        const { name } = await ProfileService.getProfileByAccountId({
           user: id,
-          filter: 'name'
-        })
+          filter: "name",
+        });
         await MailNotificationService.ugmsg({
           to: user.email,
-          name: name
-        })
+          name: name,
+        });
       }
-      return ApiResponse.gen(HTTP_OK, 'User upgraded successfully');
+      return ApiResponse.gen(HTTP_OK, "User upgraded successfully");
     } else {
-      throw ApiResponse.gen(HTTP_NOT_FOUND, 'Failed to upgrade user');
+      throw ApiResponse.gen(HTTP_NOT_FOUND, "Failed to upgrade user");
     }
   }
 }
