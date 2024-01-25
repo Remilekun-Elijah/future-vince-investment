@@ -10,14 +10,14 @@
     "migrate:create": "migrate-mongo create -f configs/migration.js",
     "migrate:up": "migrate-mongo up -f configs/migration.js",
     "migrate:down": "migrate-mongo down -f configs/migration.js",
-    "migrate:status": "migrate-mongo status -f configs/migration.js"
+    "migrate:status": "migrate-mongo status -f configs/migration.js",
+    "consola": "^2.15.3",
+    "dotenv": "^16.0.3"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "consola": "^2.15.3",
-    "dotenv": "^16.0.3",
     "eslint": "^8.14.0",
     "nodemon": "^2.0.15"
   },
