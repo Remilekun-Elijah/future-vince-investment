@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Hero = ({ isSignedUp, setIsSignedUp }) => {
   return (
-    <div className="row ms-auto hero-bg pt-lg-5 -mt-5 -pt-5  px-14">
+    <div className="row ms-auto hero-bg pt-lg-5 -mt-5 -pt-5  lg:px-14 md:px-10 px-2">
       <div className="col-lg-6 text-start pt-5 ">
         <h1 className="display-1 text-light pt-5">
           Invest for the Future <br></br>{" "}

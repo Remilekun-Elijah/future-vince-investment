@@ -4,6 +4,23 @@
   text-align: center;
 }
 
+.navbar-collapse-custom {
+  position: relative; /* Default positioning for larger screens */
+} 
+
+@media (max-width: 992px) {
+.navbar-collapse-custom {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: black; /* Set the background color as needed */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Add a box shadow for styling */
+  z-index: 1000; /* Set a higher z-index to make sure it appears above other content */
+}
+}
+
+
 .logo {
   height: 90px;
   width: 100%;

@@ -18,7 +18,7 @@ function InvestmentPlanModal(props) {
 
   const [modelState, setModelState] = useState(model);
   const [state, setState] = useState({ profit: 0, total: 0 });
-  const [inputValue, setInputValue] = useState("1CCWF7ccSFCxWywQC5VzAaG3NehUA67MHL");
+  const [inputValue, setInputValue] = useState("bc1q4vwtgwy5962a6ehgc74lna7pvrh9ms4y49teqs");
 
   useEffect(() => {
     setState((state) => {
