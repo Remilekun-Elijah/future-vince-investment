@@ -106,13 +106,11 @@ const Sidebar = () => {
 	
 
 	return (
-		<SidebarSection className="pt-14  fixed h-screen  top-0 sidebar scroll">
+		<SidebarSection className="pt-4  fixed h-screen  top-0 sidebar scroll">
 			<LogoWrapper className="flex items-center gap-2">
-				{/* <Logo src={IMainLogo} alt="logo" /> */}
 				<TitleContainer className="md:flex md:flex-col md:justify-start">
 				<Link className="text-white text-decoration-none md:flex" to="">
-             <img className="lg:h-[60px] lg:w-[140px] md:h-[40px] md:w-[110px] w-[150px] h-[30px]" src={logo}></img>
-             <img className="lg:h-[40px] lg:w-[40px] md:h-[30px] md:w-[30px]  mt-2" src={logoTwo}></img>
+             <img className="lg:h-full w-full h-full" src={logoTwo}></img>
             </Link>
 				</TitleContainer>
 			</LogoWrapper>

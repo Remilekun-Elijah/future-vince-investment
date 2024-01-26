@@ -12,11 +12,11 @@ const AboutUs = ({ isSignedUp, setIsSignedUp }) => {
             About <span className="title-spn">Us</span>
           </h1>
           <p>
-            Elon Trader is a promising company in the cryptocurrency
+            Bitcoin Engine is a promising company in the cryptocurrency
             market. We are looking for integrated solutions for successful
-            investments in equipment and organization the process of
+            investments in equipment and organizating the process of
             cryptomining. Since 2015, the company forms the core backbone of
-            bitcoin, ensuring the digital currency's integrity and successfully
+            bitcoin, ensuring the digital currency's integrity and successful
             trades through exchange platforms.
           </p>
           <p>
@@ -28,11 +28,11 @@ const AboutUs = ({ isSignedUp, setIsSignedUp }) => {
             forward to you being part of our community.
           </p>
           <Link
-                  className="btn btn-custom mt-2 text-decoration-none"
-                  to="/signup"
+                  className="btn btn-custom mt-2  text-decoration-none"
+                  to="/SignUp"
                   onClick={(e) => setIsSignedUp(false)}
                 >
-                  Sign up
+                  SignUp
           </Link>
           <div className="my-5 mx-4 rounded-lg border-4">
             <img

@@ -70,13 +70,12 @@ const SignUp = ({setIsSignedUp, isSignedUp}) => {
 		(!isSignedUp ? <div className=" backgrnd-0 ">
 			<div className="">
 				<div className="hero-bg  signUp-border2">
-				<Link className="text-white text-decoration-none flex" to="/">
-             <img className="logo " src={logo}></img>
-             <img className="logoTwo mt-2" src={logoTwo}></img>
+				<Link className="text-white text-decoration-none flex" to="">
+				<img className="w-[30%] h-[40%]" src={logoTwo}></img>
             </Link>
 					<h3 className="display-5 fw-bold text-start my-5 ms-3 me-5 text-light ">
 						Welcome To <br></br>{" "}
-						<span className="title-spn">Elon Trader</span>
+						<span className="title-spn">Bitcoin Engine</span>
 					</h3>
 				</div>
 				<Form
@@ -260,7 +259,7 @@ const SignUp = ({setIsSignedUp, isSignedUp}) => {
         <span >2022</span>
         </div>
       
-          <p className=""> Elon Trader. All rights reserved</p>
+          <p className=""> Bitcoin Engine. All rights reserved</p>
         <div className="flex justify-between  ">
           <a href="https://facebook.com"> 
           <SiFacebook className="me-2 text-white" /> 

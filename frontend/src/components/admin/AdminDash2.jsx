@@ -158,7 +158,7 @@ class AdminDash2 extends React.Component {
 												</span>
 												<br></br>
 												<span className="card-title text-start ">
-                        {dayjs(activity.createdAt).format("DD/MM/YYYY hh:mm")}
+                        {dayjs(activity.createdAt).format("DD/MM/YYYY mm:hh")}
 												</span>
 												<br></br>
 												<span className="card-text text-start">{activity.status === 0?'Awaiting confirmation': activity.status === 1 ? 'Confirmed' : 'Declined'}</span>

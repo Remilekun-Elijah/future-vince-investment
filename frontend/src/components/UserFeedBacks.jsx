@@ -7,14 +7,14 @@ const UserFeedBacks = () => {
       country: "USA",
       name: "Sundax Ezma",
       img: "./images/feed1.jpg",
-      msg: "Very friendly staff, everyone is efficient, polite and knowledgeable and go that little bit further than others. It is enjoyable to talk with a real person who takes personal interest in the conversation and has the knowledge to resolve and or explain the situation. The little things that make a big difference are what you notice. Theres no down side. If you have $10,000 or more in your bank account, you need to sign up with Elon Trader!",
+      msg: "Very friendly staff, everyone is efficient, polite and knowledgeable and go that little bit further than others. It is enjoyable to talk with a real person who takes personal interest in the conversation and has the knowledge to resolve and or explain the situation. The little things that make a big difference are what you notice. Theres no down side. If you have $10,000 or more in your bank account, you need to sign up with Bitcoin Engine!",
     },
     {
       id: 2,
       country: "India",
       name: "Monalisa Thakur",
       img: "./images/feed2.jpg",
-      msg: "For the 4 plus years investing with Elon Trader, I have been extremely satisfied with there investment packages. There havebeen some issues, but a chat with their customer support quickly resolved them. They have always delivered as promised. Business decisions and procedures where easily modified to maintain completion of procedures even with COVID.",
+      msg: "For the 4 plus years investing with Bitcoin Engine, I have been extremely satisfied with their investment packages. They have been some issues, but a chat with their customer support quickly resolved them. They have always delivered as promised. Business decisions and procedures where easily modified to maintain completion of procedures even with COVID.",
     },
     {
       id: 3,

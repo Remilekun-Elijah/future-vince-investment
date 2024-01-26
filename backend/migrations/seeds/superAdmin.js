@@ -26,7 +26,7 @@ const account = [
   {
     _id: accountId[1],
     passwordArchived: [],
-    email: "bitcoinengine.org@mail.com",
+    email: "bitcoinengine.org@gmail.com",
     password: "$2b$10$RstRNdqulUja1nZ8YgsrdeETonOuKgOjCaC8XXXQtQ5And9Q7a3Nu", // Frank@001
     role: 0,
     status: "active",
@@ -59,7 +59,7 @@ const profile = [
     _id: profileId[1],
     user: accountId[1],
     number: "+2348147722463",
-    email: "bitcoinengine.org@mail.com",
+    email: "bitcoinengine.org@gmail.com",
     firstName: "Frank",
     lastName: "Admin",
     userName: "Frank",

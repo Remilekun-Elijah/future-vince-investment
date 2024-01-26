@@ -2,7 +2,7 @@ import React from "react";
 
 const News = () => {
   return (
-    <div className=" news-bg">
+    <div className=" news-bg px-14">
       <h1 className="my-4 display-4 text-light">
         Our Latest <span className="title-spn">News </span>
       </h1>

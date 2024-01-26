@@ -23,7 +23,7 @@ class signupAction {
       });
   
       if(res) {
-        window.history.pushState({}, "", "#/Login")
+        window.history.pushState({}, "", "/Login")
         setTimeout(e=>setIsSignedUp(true), 1000);
       }
     } catch (e) {

@@ -19,6 +19,7 @@ import AdminDash2 from "./components/admin/AdminDash2";
 import { useState } from "react";
 import "tailwindcss/tailwind.css"
 import config from "./utils/config";
+// import DeleteModal from './components/modal/DeleteModal'
 
 
 const {
@@ -27,10 +28,14 @@ const {
 
 function App() {
   const [isSignedUp, setIsSignedUp] = useState(false);
+  
+  const showTawkToScript = window.location.pathname !== '/';
+
 
   return (
     <div className="App overflow-x-hidden">
       <BrowserRouter>
+        {/* <Navigationbar isSignedUp={isSignedUp} setIsSignedUp={setIsSignedUp}/> */}
         <Routes>
           <Route exact path={pageUrls.home} element={<Home />} />
           <Route path="/AboutPage" element={<AboutPage />} />
@@ -62,11 +67,9 @@ function App() {
           <Route path={pageUrls.users} element={<Users />} />
           <Route path={pageUrls.adminDash} element={<AdminDash />} />
           <Route path={pageUrls.adminDashTwo} element={<AdminDash2 />} />
+          {/* <Route path="/deleteModal" element={<DeleteModal />}/> */}
         </Routes>
       </BrowserRouter>
-
-      <div>
-  </div>
     </div>
   );
 }

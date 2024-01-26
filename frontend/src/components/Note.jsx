@@ -36,7 +36,7 @@ const Note = ({ setIsSignedUp }) => {
         </div>
         <Link
                   className=" text-decoration-none"
-                  to="/signup"
+                  to="/SignUp"
                   onClick={(e) => setIsSignedUp(false)}
                 >
         <button className="btn btn-custom mb-3">BECOME A MEMBER</button>

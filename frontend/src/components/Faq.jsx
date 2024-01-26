@@ -19,7 +19,7 @@ const Faq = () => {
             <AiOutlineQuestionCircle className="me-2 " />When can I deposit/withdraw from my Investment account?
           </Accordion.Header>
           <Accordion.Body>
-          Deposit and withdrawal are available to users at any time. Be sure, that your funds are not used in any ongoing trade before the withdrawal. The available amount is shown in your dashboard on the main page of as Available Balance.
+          Deposit and withdrawal are available to users at any time. Be sure, that your funds are not used in any ongoing trade before the withdrawal. The available amount is shown in your dashboard on the main page as Available Balance.
           </Accordion.Body>
         </Accordion.Item>
         <Accordion.Item className="my-3 border-top faq-1" eventKey="1">
