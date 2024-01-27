@@ -37,7 +37,7 @@ const DashboardTwo = () => {
 						Good day, {user?.userName || "User"}
 					</h3>
 					<p className="text-start text-[var(--C_black_lite)] ">
-						Welcome to Elon trade
+						Welcome to Bitcoin Engine
 					</p>
 					<div className="md:flex m-auto w-[100%] pb-5">
 					<div className=" w-[90%] ">
